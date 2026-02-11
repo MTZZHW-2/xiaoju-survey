@@ -7,28 +7,6 @@
   >
     <div><slot v-if="moduleConfig.type !== 'section'"></slot></div>
 
-    <div :class="[showHover ? 'visibility' : 'hidden', 'hoverItem']">
-      <div
-        class="item el-icon-rank"
-        @click.stop.prevent
-        @mouseenter="setMoveState(true)"
-        @mouseleave="setMoveState(false)"
-      >
-        <i-ep-rank />
-      </div>
-      <div v-if="showUp" class="item" @click.stop.prevent="onMoveUp">
-        <i-ep-top />
-      </div>
-      <div v-if="showDown" class="item" @click.stop.prevent="onMoveDown">
-        <i-ep-bottom />
-      </div>
-      <div v-if="showCopy" class="item" @click.stop.prevent="onCopy">
-        <i-ep-copyDocument />
-      </div>
-      <div class="item" @click.stop.prevent="onDelete">
-        <i-ep-close />
-      </div>
-    </div>
     <div class="logic-text showText" v-html="getShowLogicText"></div>
     <div class="logic-text jumpText" v-html="getJumpLogicText"></div>
   </div>

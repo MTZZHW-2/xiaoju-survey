@@ -84,18 +84,6 @@ export default defineComponent({
         ) : (
           slots.default()
         )}
-        {this.showOptionEditBar && (
-          <OptionEditBar
-            ref="optionEditBar"
-            option-list={this.getOptions}
-            showOthers={this.showOthers}
-            showAdvancedConfig={this.showAdvancedConfig}
-            onAddOption={this.handleAddOption}
-            onAddOther={this.handleAddOtherOption}
-            onOptionChange={this.handleOptionChange}
-            onChange={this.handleChange}
-          />
-        )}
       </div>
     )
   }
