@@ -112,24 +112,6 @@ export default defineComponent({
         maxNum={this.maxNum}
         onChange={this.onChange}
       >
-        {{
-          vote: (scoped) => {
-            return (
-              <div class="vote-detail">
-                <AnswerProcess
-                  process-conf={{
-                    percent: `${calcVotePercent(scoped.option, scoped.voteTotal)}%`
-                  }}
-                />
-                <div class="vote-percent">{`${calcVotePercent(
-                  scoped.option,
-                  scoped.voteTotal
-                )}%`}</div>
-                <div class="vote-count">{`${scoped.option.voteCount || 0}票`}</div>
-              </div>
-            )
-          }
-        }}
       </BaseChoice>
     )
   }
