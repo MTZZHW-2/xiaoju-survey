@@ -236,7 +236,6 @@ export const curStatusSelect = {
 }
 
 export const selectOptionsDict = Object.freeze({
-  surveyType: surveyTypeSelect,
   status: curStatusSelect
 })
 

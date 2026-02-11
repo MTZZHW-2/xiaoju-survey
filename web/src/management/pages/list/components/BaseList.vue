@@ -168,7 +168,7 @@ const props = defineProps({
   }
 })
 const emit = defineEmits(['refresh'])
-const fields = ['type', 'title', 'remark', 'owner', 'state', 'createdAt', 'updatedAt']
+const fields = ['title', 'remark', 'owner', 'state', 'createdAt', 'updatedAt']
 const showModify = ref(false)
 const modifyType = ref('')
 const questionInfo = ref({})
