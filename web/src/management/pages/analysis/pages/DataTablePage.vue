@@ -5,13 +5,6 @@
         <el-button type="primary" :loading="isDownloading" @click="onDownload"
           >导出数据</el-button
         >
-        <el-switch
-          class="desensitize-switch"
-          :model-value="isShowOriginData"
-          active-text="是否展示原数据"
-          @input="onIsShowOriginChange"
-        >
-        </el-switch>
       </div>
     </template>
 
@@ -53,8 +46,8 @@ const dataTableState = reactive({
     listBody: []
   },
   currentPage: 1,
-  isShowOriginData: false,
-  tmpIsShowOriginData: false,
+  isShowOriginData: true,
+  tmpIsShowOriginData: true,
   isDownloading: false
 })
 
