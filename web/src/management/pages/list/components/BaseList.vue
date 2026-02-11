@@ -109,7 +109,6 @@
       :menu-type="menuType"
       @on-close-codify="onCloseModify"
     />
-    <CooperModify :modifyId="cooperId" :visible="cooperModify" @on-close-codify="onCooperClose" />
   </div>
 </template>
 
@@ -124,7 +123,6 @@ import 'element-plus/theme-chalk/src/message.scss'
 import 'element-plus/theme-chalk/src/message-box.scss'
 
 import EmptyIndex from '@/management/components/EmptyIndex.vue'
-import CooperModify from '@/management/components/CooperModify/ModifyDialog.vue'
 import { CODE_MAP } from '@/management/api/base'
 import { QOP_MAP } from '@/management/utils/constant.ts'
 import { deleteSurvey, pausingSurvey } from '@/management/api/survey'
@@ -259,10 +257,6 @@ const getToolConfig = (row) => {
     {
       key: subStatus.pausing.value,
       label: '暂停'
-    },
-    {
-      key: 'cooper',
-      label: '协作'
     }
   ]
   if (!workSpaceId.value) {
@@ -304,20 +298,12 @@ const getToolConfig = (row) => {
           }
         )
       }
-      if (row.currentPermissions.includes(SurveyPermissions.CollaboratorManage)) {
-        // 协作人判断权限显示协作按钮
-        funcList.push({
-          key: 'cooper',
-          label: '协作'
-        })
-      }
     }
   } else {
-    // 团队空间没有开放协作功能，不需要判断按钮状态
-    permissionsBtn.splice(-1)
+    // 团队空间
     funcList = permissionsBtn
   }
-  const order = ['edit', 'analysis', 'release', 'pausing', 'delete', 'copy', 'cooper']
+  const order = ['edit', 'analysis', 'release', 'pausing', 'delete', 'copy']
   if (
     row.curStatus.status === curStatus.new.value ||
     row.subStatus.status === subStatus.pausing.value
@@ -356,9 +342,6 @@ const handleClick = (key, data) => {
       return
     case 'delete':
       onDelete(data)
-      return
-    case 'cooper':
-      onCooper(data)
       return
     case 'pausing':
       onPausing(data)
@@ -451,15 +434,6 @@ const onButtonChange = (effectKey, effectValue) => {
   onRefresh()
 }
 
-const cooperModify = ref(false)
-const cooperId = ref('')
-const onCooper = async (row) => {
-  cooperId.value = row._id
-  cooperModify.value = true
-}
-const onCooperClose = () => {
-  cooperModify.value = false
-}
 const resetCurrentPage = () => {
   currentPage.value = 1
   onRefresh()

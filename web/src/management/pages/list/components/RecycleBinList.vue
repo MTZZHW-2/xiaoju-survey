@@ -83,7 +83,6 @@
       :menu-type="menuType"
       @on-close-codify="onCloseModify"
     />
-    <CooperModify :modifyId="cooperId" :visible="cooperModify" @on-close-codify="onCooperClose" />
   </div>
 </template>
 
@@ -99,7 +98,6 @@ import 'element-plus/theme-chalk/src/message.scss'
 import 'element-plus/theme-chalk/src/message-box.scss'
 
 import EmptyIndex from '@/management/components/EmptyIndex.vue'
-import CooperModify from '@/management/components/CooperModify/ModifyDialog.vue'
 import { CODE_MAP } from '@/management/api/base'
 import { QOP_MAP } from '@/management/utils/constant.ts'
 import { deleteSurvey, pausingSurvey, recoverSurvey, completeDeleteSurvey } from '@/management/api/survey'
@@ -265,9 +263,6 @@ const handleClick = (key, data) => {
     case 'delete':
       onDelete(data)
       return
-    case 'cooper':
-      onCooper(data)
-      return
     case 'pausing':
       onPausing(data)
       return
@@ -397,15 +392,6 @@ const onButtonChange = (effectKey, effectValue) => {
   onRefresh()
 }
 
-const cooperModify = ref(false)
-const cooperId = ref('')
-const onCooper = async (row) => {
-  cooperId.value = row._id
-  cooperModify.value = true
-}
-const onCooperClose = () => {
-  cooperModify.value = false
-}
 const resetCurrentPage = () => {
   currentPage.value = 1
   onRefresh()
