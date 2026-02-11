@@ -45,11 +45,13 @@ export const useEditStore = defineStore('edit', () => {
   const cooperPermissions = ref(Object.values(SurveyPermissions))
   const fetchCooperPermissions = async (id: string) => {
     const res: any = await getCollaboratorPermissions(id)
-    if (res.code === CODE_MAP.SUCCESS) {
+    if (res.code === CODE_MAP.SUCCESS && res.data?.permissions) {
       cooperPermissions.value = res.data.permissions
+      return res.data.permissions
     }
 
-    return res.data.permissions
+    // 默认返回所有权限（已移除协作功能）
+    return Object.values(SurveyPermissions)
   }
 
   // 问卷题目列表
