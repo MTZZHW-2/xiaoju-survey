@@ -58,7 +58,7 @@ export default defineComponent({
         return (
           <div class={classStr}>
             <p>点击配置头图</p>
-            <p>若不配置头图，将不在问卷中展示</p>
+            <p>若不配置头图，将不在投票中展示</p>
           </div>
         )
       }

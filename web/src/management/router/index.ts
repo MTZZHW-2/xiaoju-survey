@@ -234,7 +234,7 @@ async function handlePermissionsGuard(
       if (hasRequiredPermissions(to.meta.permissions as string[], cooperPermissions)) {
         next()
       } else {
-        ElMessage.warning('您没有该问卷的相关协作权限')
+        ElMessage.warning('您没有该投票的相关协作权限')
         next({ name: 'survey' })
       }
     } else {

@@ -11,7 +11,7 @@ interface Props {
   moduleConfig: any
 }
 const props = defineProps<Props>()
-const resultText = computed(() => props.moduleConfig?.msgContent?.msg_9001 || '问卷已过期')
+const resultText = computed(() => props.moduleConfig?.msgContent?.msg_9001 || '投票已过期')
 </script>
 <style lang="scss" scoped>
 .over-time {

@@ -23,7 +23,7 @@ import SetterField from '@/management/pages/edit/components/SetterField.vue'
 
 const textMap = {
   Success: '提交成功页面配置',
-  OverTime: '问卷过期页面配置'
+  OverTime: '投票过期页面配置'
 }
 
 const editStore = useEditStore()

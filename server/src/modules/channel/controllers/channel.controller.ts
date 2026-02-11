@@ -99,7 +99,7 @@ export class ChannelController {
     const curPage = Number(value.curPage);
     const pageSize = Number(value.pageSize);
 
-    // 查询当前问卷的渠道列表
+    // 查询当前投票的渠道列表
     const channelList = await this.channelService.findAllBySurveyId(
       queryInfo.surveyId,
     );

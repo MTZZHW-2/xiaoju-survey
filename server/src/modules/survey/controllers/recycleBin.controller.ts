@@ -22,14 +22,14 @@ export class RecycleBinController {
     @HttpCode(200)
     async getCount(@Request() req) {
         const userId = req.user._id.toString();
-        // 查询当前用户协作的问卷
+        // 查询当前用户协作的投票
         let cooperationList = []
         cooperationList = await this.collaboratorService.getManageListByUserId({ userId });
         const surveyIdList1 = cooperationList.map((item) => item.surveyId);
-        // 查询当前用户参与的空间下的回收站的问卷
+        // 查询当前用户参与的空间下的回收站的投票
         const surveyIdList2 = (await this.workspaceService.getAllSurveyIdListByUserId(userId, true)).data.surveyIdList
         const surveyIdList = [...new Set([...surveyIdList1, ...surveyIdList2])];
-        // 查询回收站中所有问卷总数
+        // 查询回收站中所有投票总数
         const allSurveyTotal =
           await this.surveyMetaService.countSurveyMetaByGroupId({
             userId,

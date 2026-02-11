@@ -47,7 +47,7 @@ import { FORM_CHANGE_EVENT_KEY } from '@/materials/setters/constant'
 
 interface Props {
   formConfigList: Array<any> // 设置器的配置
-  moduleConfig: any // 当前问卷schema
+  moduleConfig: any // 当前投票schema
   customComponents?: Record<string, Component>
 }
 
@@ -190,7 +190,7 @@ watch(
 )
 
 watch(
-  () => props.moduleConfig, // 当前问卷schema
+  () => props.moduleConfig, // 当前投票schema
   () => {
     // 配置变化后初次不监听value变化（如题型切换场景避免多次计算）
     if (init.value) {

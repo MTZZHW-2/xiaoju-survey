@@ -25,7 +25,7 @@
                 class="tooltip"
                 effect="dark"
                 placement="right"
-                content="类似商品库存，表示最多可以被选择多少次；0为无限制；已发布问卷，上限修改时数量不可减小。"
+                content="类似商品库存，表示最多可以被选择多少次；0为无限制；已发布投票，上限修改时数量不可减小。"
               >
                 <i-ep-questionFilled class="icon-tip" />
               </el-tooltip>

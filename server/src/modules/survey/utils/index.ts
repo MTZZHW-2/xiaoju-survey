@@ -18,7 +18,7 @@ export async function getSchemaBySurveyType(surveyType: string) {
   // Implement your logic here
   const codeData = get(schemaDataMap, surveyType);
   if (!codeData) {
-    throw new Error('问卷类型不存在');
+    throw new Error('投票类型不存在');
   }
   const code = Object.assign({}, templateBase, codeData);
   const nowMoment = moment();

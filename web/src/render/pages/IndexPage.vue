@@ -81,7 +81,7 @@ const getDetail = async (surveyPath: string) => {
     }
   } catch (error: any) {
     console.log(error)
-    alert({ title: error.message || '获取问卷失败' })
+    alert({ title: error.message || '获取投票失败' })
   }
 }
 </script>

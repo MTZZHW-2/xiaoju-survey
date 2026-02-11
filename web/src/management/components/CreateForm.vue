@@ -7,15 +7,15 @@
     label-width="100px"
     :rules="rules"
   >
-    <el-form-item prop="title" label="问卷名称">
+    <el-form-item prop="title" label="投票名称">
       <el-input
         v-model="form.title"
         :class="form.title ? 'nonempty' : 'empty'"
-        placeholder="请输入问卷名称"
+        placeholder="请输入投票名称"
       />
-      <p class="form-item-tip">该标题可在打开问卷的浏览器顶部展示</p>
+      <p class="form-item-tip">该标题可在打开投票的浏览器顶部展示</p>
     </el-form-item>
-    <el-form-item prop="remark" label="问卷备注">
+    <el-form-item prop="remark" label="投票备注">
       <el-input
         v-model="form.remark"
         :class="form.remark ? 'nonempty' : 'empty'"
@@ -23,7 +23,7 @@
       />
       <p class="form-item-tip">备注仅自己可见</p>
     </el-form-item>
-    <el-form-item prop="surveyType" label="问卷类型">
+    <el-form-item prop="surveyType" label="投票类型">
       <el-radio-group v-model="form.surveyType">
         <el-radio v-for="item in surveyTypeList" :value="item.type" :key="item.type">{{ item.title }}</el-radio>
       </el-radio-group>
@@ -74,11 +74,11 @@ const surveyTypeList = computed(() => SURVEY_TYPE_LIST)
 
 const state = reactive({
   rules: {
-    title: [{ required: true, message: '请输入问卷标题', trigger: 'blur' }]
+    title: [{ required: true, message: '请输入投票标题', trigger: 'blur' }]
   },
   form: {
-    title: '问卷调研',
-    remark: '问卷调研',
+    title: '投票调研',
+    remark: '投票调研',
     surveyType: 'normal',
     groupId: props.groupId === GroupState.All || props.groupId === GroupState.Not ? '' : props.groupId
   }

@@ -6,11 +6,11 @@ export enum SURVEY_PERMISSION {
 
 export const SURVEY_PERMISSION_DESCRIPTION = {
   SURVEY_CONF_MANAGE: {
-    name: '问卷配置管理',
+    name: '投票配置管理',
     value: SURVEY_PERMISSION.SURVEY_CONF_MANAGE,
   },
   surveyResponseManage: {
-    name: '问卷分析管理',
+    name: '投票分析管理',
     value: SURVEY_PERMISSION.SURVEY_RESPONSE_MANAGE,
   },
   surveyCooperatorManage: {

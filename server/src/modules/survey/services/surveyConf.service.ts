@@ -55,7 +55,7 @@ export class SurveyConfService {
       where: { pageId: surveyId },
     });
     if (!code) {
-      throw new SurveyNotFoundException('问卷配置不存在');
+      throw new SurveyNotFoundException('投票配置不存在');
     }
     return code;
   }
@@ -66,7 +66,7 @@ export class SurveyConfService {
   }) {
     const codeInfo = await this.getSurveyConfBySurveyId(params.surveyId);
     if (!codeInfo) {
-      throw new SurveyNotFoundException('问卷配置不存在');
+      throw new SurveyNotFoundException('投票配置不存在');
     }
     codeInfo.code = params.schema;
     await this.surveyConfRepository.save(codeInfo);

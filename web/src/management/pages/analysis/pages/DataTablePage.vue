@@ -97,7 +97,7 @@ const handleCurrentChange = async (page) => {
 
 const init = async () => {
   if (!route.params.id) {
-    ElMessage.error('没有传入问卷参数~')
+    ElMessage.error('没有传入投票参数~')
     return
   }
   dataTableState.mainTableLoading = true

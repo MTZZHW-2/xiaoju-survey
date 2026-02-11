@@ -61,7 +61,7 @@ describe('SurveyConfService', () => {
       await service.getSurveyConfBySurveyId('nonExistingId');
     } catch (error) {
       expect(error).toBeInstanceOf(SurveyNotFoundException);
-      expect(error.message).toBe('问卷配置不存在');
+      expect(error.message).toBe('投票配置不存在');
     }
 
     expect(surveyConfRepository.findOne).toHaveBeenCalledWith({

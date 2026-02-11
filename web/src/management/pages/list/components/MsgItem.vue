@@ -9,7 +9,7 @@
         v-if="message.sender === 'ai' && message.status === 'generating'"
         class="generating-notice"
       >
-        <span style="color: #6E707C;">请稍后，生成问卷努力敲击中....</span>
+        <span style="color: #6E707C;">请稍后，生成投票努力敲击中....</span>
         <span 
           style="color: #FAA600; margin-left: 8px; cursor: pointer;"
           @click="handleStopGenerating"

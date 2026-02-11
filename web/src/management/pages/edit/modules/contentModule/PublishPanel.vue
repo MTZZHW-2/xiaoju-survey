@@ -38,12 +38,12 @@ const validate = () => {
   const { validated, message } = props.updateLogicConf()
   if (!validated) {
     checked = validated
-    msg = `检查页面"问卷编辑>显示逻辑"：${message}`
+    msg = `检查页面"投票编辑>显示逻辑"：${message}`
   }
   const { validated: whiteValidated, message: whiteMsg } = props.updateWhiteConf()
   if (!whiteValidated) {
     checked = whiteValidated
-    msg = `检查页面"问卷设置>作答限制"：${whiteMsg}`
+    msg = `检查页面"投票设置>作答限制"：${whiteMsg}`
   }
 
   return {
@@ -58,7 +58,7 @@ const onSave = async () => {
     return null
   }
   if (!saveData.value.surveyId) {
-    ElMessage.error('未获取到问卷id')
+    ElMessage.error('未获取到投票id')
     return null
   }
 
@@ -85,7 +85,7 @@ const onSave = async () => {
       return null
     }
   } catch (error) {
-    ElMessage.error('保存问卷失败')
+    ElMessage.error('保存投票失败')
     return null
   }
 }

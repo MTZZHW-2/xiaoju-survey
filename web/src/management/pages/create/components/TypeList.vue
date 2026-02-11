@@ -2,7 +2,7 @@
   <div class="left-side">
     <div class="main">
       <nav-header :box-shadow="false" />
-      <div class="new-title">请选择创建的问卷类型</div>
+      <div class="new-title">请选择创建的投票类型</div>
       <ul class="new-cardList">
         <li
           v-for="item in renderData"

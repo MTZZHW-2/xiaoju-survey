@@ -32,7 +32,7 @@ const statusList = [
   },
   {
     type: EDIT_STATUS_MAP.OVERTIME,
-    title: '问卷过期',
+    title: '投票过期',
     previewImg: '/imgs/icons/overtime.webp'
   }
 ]

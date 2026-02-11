@@ -30,7 +30,7 @@ export class SurveyResponseService {
       channelId,
     });
 
-    // 提交问卷
+    // 提交投票
     const res = await this.surveyResponseRepository.save(newSubmitData);
     // res是加密后的数据，需要手动调用loaded才会触发解密
     res.onDataLoaded();

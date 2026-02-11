@@ -36,7 +36,7 @@ export default defineComponent({
         return (
           <div class="logo-placeholder-wrapper">
             <div class="logo-placeholder">LOGO</div>
-            <div class="no-logo-tip">若不配置logo，该图片将不会在问卷中展示</div>
+            <div class="no-logo-tip">若不配置logo，该图片将不会在投票中展示</div>
           </div>
         )
       }

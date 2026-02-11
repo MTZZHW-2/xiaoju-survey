@@ -11,7 +11,7 @@ export class GetChannelListDto {
   @ApiProperty({ description: '渠道名称', required: false })
   name?: string;
 
-  @ApiProperty({ description: '问卷id', required: true })
+  @ApiProperty({ description: '投票id', required: true })
   surveyId?: string;
 
   static validate(data: Partial<GetChannelListDto>): Joi.ValidationResult {

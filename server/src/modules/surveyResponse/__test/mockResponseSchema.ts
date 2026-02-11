@@ -26,7 +26,7 @@ export const mockResponseSchema: ResponseSchema = {
     bannerConf: {
       titleConfig: {
         mainTitle:
-          '<h3 style="text-align: center">欢迎填写问卷</h3><p>为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，<span style="color: rgb(204, 0, 0)">期待您的参与！</span></p>',
+          '<h3 style="text-align: center">欢迎填写投票</h3><p>为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，<span style="color: rgb(204, 0, 0)">期待您的参与！</span></p>',
         subTitle: '',
       },
       bannerConfig: {
@@ -66,7 +66,7 @@ export const mockResponseSchema: ResponseSchema = {
       submitTitle: '提交',
       msgContent: {
         msg_200: '提交成功',
-        msg_9001: '您来晚了，感谢支持问卷~',
+        msg_9001: '您来晚了，感谢支持投票~',
         msg_9002: '请勿多次提交！',
         msg_9003: '您来晚了，已经满额！',
         msg_9004: '提交失败！',

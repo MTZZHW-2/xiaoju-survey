@@ -3,7 +3,7 @@ import Joi from 'joi';
 import { MESSAGE_PUSHING_HOOK } from 'src/enums/messagePushing';
 
 export class QueryMessagePushingTaskListDto {
-  @ApiProperty({ description: '问卷id', required: false })
+  @ApiProperty({ description: '投票id', required: false })
   surveyId?: string;
 
   @ApiProperty({ description: 'hook名称', required: false })

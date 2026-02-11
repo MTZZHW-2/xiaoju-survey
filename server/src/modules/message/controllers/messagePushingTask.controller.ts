@@ -161,7 +161,7 @@ export class MessagePushingTaskController {
   }
 
   @ApiResponse({
-    description: '给任务绑定新问卷',
+    description: '给任务绑定新投票',
     status: 200,
   })
   @Post(':taskId/surveys/:surveyId')

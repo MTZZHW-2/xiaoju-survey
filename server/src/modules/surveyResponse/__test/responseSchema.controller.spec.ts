@@ -126,7 +126,7 @@ describe('ResponseSchemaController', () => {
         } as ResponseSchema);
 
       await expect(controller.getSchema(mockQueryInfo)).rejects.toThrow(
-        new HttpException('该问卷已暂停回收', EXCEPTION_CODE.RESPONSE_PAUSING),
+        new HttpException('该投票已暂停回收', EXCEPTION_CODE.RESPONSE_PAUSING),
       );
     });
   });

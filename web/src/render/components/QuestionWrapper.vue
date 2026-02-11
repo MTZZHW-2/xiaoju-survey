@@ -136,7 +136,7 @@ const storageAnswer = (formData) => {
   setSurveySubmit(id, 0)
 }
 
-/** 问卷逻辑处理 */
+/** 投票逻辑处理 */
 // 显示逻辑：题目是否需要显示
 const logicShow = computed(() => {
   // computed有计算缓存，当match有变化的时候触发重新计算
@@ -192,7 +192,7 @@ const processJumpSkip = () => {
   const targetResult = surveyStore.jumpLogicEngine
     .getResultsByField(changeField.value, surveyStore.formValues)
     .map((item) => {
-      // 获取目标题的序号，处理跳转问卷末尾为最大题的序号
+      // 获取目标题的序号，处理跳转投票末尾为最大题的序号
       const index =
         item.target === 'end'
           ? surveyStore.dataConf.dataList.length
@@ -228,5 +228,5 @@ const processJumpSkip = () => {
     .map((item) => item.field)
   questionStore.addNeedHideFields(skipKey)
 }
-/** 问卷逻辑处理 */
+/** 投票逻辑处理 */
 </script>

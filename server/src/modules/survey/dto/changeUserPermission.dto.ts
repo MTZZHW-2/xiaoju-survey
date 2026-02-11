@@ -3,7 +3,7 @@ import Joi from 'joi';
 import { SURVEY_PERMISSION } from 'src/enums/surveyPermission';
 
 export class ChangeUserPermissionDto {
-  @ApiProperty({ description: '问卷id', required: true })
+  @ApiProperty({ description: '投票id', required: true })
   surveyId: string;
 
   @ApiProperty({ description: '用户id', required: false })

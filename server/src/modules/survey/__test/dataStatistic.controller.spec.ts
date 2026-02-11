@@ -214,13 +214,13 @@ describe('DataStatisticController', () => {
         ],
         createdAt: 1717158851823,
         updatedAt: 1717159136025,
-        title: '问卷调研',
+        title: '投票调研',
         surveyPath: 'ZdGNzTTR',
         code: {
           bannerConf: {
             titleConfig: {
               mainTitle:
-                '<h3 style="text-align: center">欢迎填写问卷</h3><p>为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，<span style="color: rgb(204, 0, 0)">期待您的参与！</span></p>',
+                '<h3 style="text-align: center">欢迎填写投票</h3><p>为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，<span style="color: rgb(204, 0, 0)">期待您的参与！</span></p>',
               subTitle: '',
               applyTitle: '',
             },

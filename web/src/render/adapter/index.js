@@ -15,7 +15,7 @@ const adapter = (() => {
       list.push(fun)
     },
     exec,
-    // 部分问卷需要依赖一些异步的数据
+    // 部分投票需要依赖一些异步的数据
     generateData(questionData) {
       return exec(questionData)
     }

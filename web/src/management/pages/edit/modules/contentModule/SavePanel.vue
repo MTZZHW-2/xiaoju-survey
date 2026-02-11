@@ -76,7 +76,7 @@ const onSave = async () => {
   }
 
   if (!saveData.surveyId) {
-    ElMessage.error('未获取到问卷id')
+    ElMessage.error('未获取到投票id')
     return null
   }
 
@@ -134,7 +134,7 @@ const handleSave = async () => {
 }
 
 /**
- * 保存问卷
+ * 保存投票
  * @return 无返回时说明保存失败并由函数内部完成统一提示，有返回时，code为200为保存成功，不为200时，使用errmsg由外部实现错误信息展示
  */
 const doSave = async () => {
@@ -173,7 +173,7 @@ const doSave = async () => {
       ElMessage.error(res.errmsg)
     }
   } catch (error) {
-    ElMessage.error('保存问卷失败')
+    ElMessage.error('保存投票失败')
   } finally {
     isSaving.value = false
   }

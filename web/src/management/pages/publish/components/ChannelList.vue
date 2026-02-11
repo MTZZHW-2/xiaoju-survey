@@ -105,7 +105,7 @@ const handleRanameClose = () => {
   curChannelId.value = ''
 }
 const handleClose = (channelId: string) => {
-  ElMessageBox.confirm('关闭投放后，将停止问卷回收，是否继续?', '确定要关闭投放吗？', {
+  ElMessageBox.confirm('关闭投放后，将停止投票回收，是否继续?', '确定要关闭投放吗？', {
     confirmButtonText: '确定',
     cancelButtonText: '取消',
     type: 'warning'

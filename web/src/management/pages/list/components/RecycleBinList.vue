@@ -307,7 +307,7 @@ const onRecover = async (row) => {
 
 const onCompleteDelete = async (row) => {
   try {
-    await ElMessageBox.confirm('将从回收站中永久删除该问卷，是否确认删除？', '提示', {
+    await ElMessageBox.confirm('将从回收站中永久删除该投票，是否确认删除？', '提示', {
       confirmButtonText: '确定',
       cancelButtonText: '取消',
       type: 'warning'
@@ -330,7 +330,7 @@ const onCompleteDelete = async (row) => {
 
 const onPausing = async (row) => {
   try {
-    await ElMessageBox.confirm('“暂停回收”后问卷将不能填写，是否继续？', '提示', {
+    await ElMessageBox.confirm('“暂停回收”后投票将不能填写，是否继续？', '提示', {
       confirmButtonText: '确定',
       cancelButtonText: '取消',
       type: 'warning'
@@ -368,7 +368,7 @@ const onCloseModify = (type) => {
 const onRowClick = async (row) => {
 
   try {
-    await ElMessageBox.alert('该问卷已被删除，无法继续访问。', '提示', {
+    await ElMessageBox.alert('该投票已被删除，无法继续访问。', '提示', {
       confirmButtonText: '返回投票列表',
       type: 'warning'
     })

@@ -1,4 +1,4 @@
-// 用于记录“问卷断点续答”的数据
+// 用于记录“投票断点续答”的数据
 export const getSurveyData = (id: string): any => {
   try {
     return JSON.parse(localStorage.getItem(`${id}_questionData`) as string) || null
@@ -13,7 +13,7 @@ export const setSurveyData = (id: string, formData: any = {}) => {
 }
 export const clearSurveyData = (id: string) => localStorage.removeItem(`${id}_questionData`)
 
-// 问卷是否提交过，用于“自动填充上次填写内容”
+// 投票是否提交过，用于“自动填充上次填写内容”
 export const getSurveySubmit = (id: string): number => {
   try {
     return Number(JSON.parse(localStorage.getItem(`${id}_submit`) as string)) || 0

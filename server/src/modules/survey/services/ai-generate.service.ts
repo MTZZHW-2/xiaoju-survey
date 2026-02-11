@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import fetch from 'node-fetch';
 import { Logger } from 'src/logger';
 
-const SYSTEM_PROMPT = `你是专业问卷设计专家，请严格按以下格式生成各种题型：
+const SYSTEM_PROMPT = `你是专业投票设计专家，请严格按以下格式生成各种题型：
   【格式要求】
 
   问题内容[单行输入框]

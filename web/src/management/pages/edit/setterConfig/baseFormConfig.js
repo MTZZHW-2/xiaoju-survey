@@ -1,4 +1,4 @@
-// 问卷设置，定义了字段和对应的设置器
+// 投票设置，定义了字段和对应的设置器
 export default {
   base_effectTime: {
     keys: ['beginTime', 'endTime'],

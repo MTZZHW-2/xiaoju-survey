@@ -23,7 +23,7 @@ export class CreateMessagePushingTaskDto {
   triggerHook?: MESSAGE_PUSHING_HOOK;
 
   @ApiProperty({
-    description: '绑定的问卷id，初始可以为空后续再绑定',
+    description: '绑定的投票id，初始可以为空后续再绑定',
     required: false,
     default: [],
   })

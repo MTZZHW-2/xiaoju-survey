@@ -21,7 +21,7 @@ export const useEditStore = defineStore('edit', () => {
     surveyId.value = id
   }
 
-  // 初始化问卷内容
+  // 初始化投票内容
   const {
     schema,
     sessionId,
@@ -41,7 +41,7 @@ export const useEditStore = defineStore('edit', () => {
     currentEditStatus.value = 'Success'
   }
 
-  // 问卷协作权限
+  // 投票协作权限
   const cooperPermissions = ref(Object.values(SurveyPermissions))
   const fetchCooperPermissions = async (id: string) => {
     const res: any = await getCollaboratorPermissions(id)
@@ -54,7 +54,7 @@ export const useEditStore = defineStore('edit', () => {
     return Object.values(SurveyPermissions)
   }
 
-  // 问卷题目列表
+  // 投票题目列表
   const questionDataList = toRef(schema, 'questionDataList')
   function setQuestionDataList(data: any) {
     schema.questionDataList = data
@@ -101,7 +101,7 @@ export const useEditStore = defineStore('edit', () => {
     setQuestionDataList(newData)
   }
 
-  // 问卷schema更新
+  // 投票schema更新
   const schemaUpdateTime = ref(Date.now())
   function updateTime() {
     schemaUpdateTime.value = Date.now()

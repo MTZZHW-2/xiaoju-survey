@@ -53,7 +53,7 @@ export class ResponseSchemaController {
 
     if (responseSchema.subStatus.status === RECORD_SUB_STATUS.PAUSING) {
       throw new HttpException(
-        '该问卷已暂停回收',
+        '该投票已暂停回收',
         EXCEPTION_CODE.RESPONSE_PAUSING,
       );
     }
@@ -83,7 +83,7 @@ export class ResponseSchemaController {
       throw new HttpException('参数错误', EXCEPTION_CODE.PARAMETER_ERROR);
     }
 
-    // 问卷信息
+    // 投票信息
     const schema =
       await this.responseSchemaService.getResponseSchemaByPath(surveyPath);
     if (!schema || schema.isDeleted) {

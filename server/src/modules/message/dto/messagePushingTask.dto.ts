@@ -21,7 +21,7 @@ export class MessagePushingTaskDto {
   @ApiProperty({ description: '触发时机' })
   triggerHook: MESSAGE_PUSHING_HOOK;
 
-  @ApiProperty({ description: '包含问卷id' })
+  @ApiProperty({ description: '包含投票id' })
   surveys: string[];
 
   @ApiProperty({ description: '所有者' })

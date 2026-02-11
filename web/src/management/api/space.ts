@@ -54,7 +54,7 @@ export const addCollaborator = ({ surveyId, userId, permissions }: any) => {
     permissions
   })
 }
-// 更新问卷协作信息
+// 更新投票协作信息
 export const updateCollaborator = ({ surveyId, userId, permissions }: any) => {
   return axios.post('collaborator/changeUserPermission', {
     surveyId,
@@ -62,7 +62,7 @@ export const updateCollaborator = ({ surveyId, userId, permissions }: any) => {
     permissions
   })
 }
-// 获取问卷协作信息
+// 获取投票协作信息
 export const getCollaborator = (surveyId: string) => {
   return axios.get(`collaborator`, {
     params: {
@@ -70,7 +70,7 @@ export const getCollaborator = (surveyId: string) => {
     }
   })
 }
-// 获取问卷协作权限
+// 获取投票协作权限
 export const getCollaboratorPermissions = (surveyId: string) => {
   return axios.get(`collaborator/permissions`, {
     params: {

@@ -1,7 +1,7 @@
 <template>
    <el-dialog
     :modelValue="visible"
-    title="APP嵌入式问卷"
+    title="APP嵌入式投票"
     width="500"
     :before-close="handleClose"
   >

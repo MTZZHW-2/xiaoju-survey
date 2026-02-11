@@ -375,7 +375,7 @@ const onDelete = async (row) => {
 
 const onPausing = async (row) => {
   try {
-    await ElMessageBox.confirm('“暂停回收”后问卷将不能填写，是否继续？', '提示', {
+    await ElMessageBox.confirm('“暂停回收”后投票将不能填写，是否继续？', '提示', {
       confirmButtonText: '确定',
       cancelButtonText: '取消',
       type: 'warning'

@@ -76,8 +76,8 @@ describe('SurveyController', () => {
     it('should create a survey and return the survey id', async () => {
       const surveyInfo = {
         surveyType: 'normal',
-        remark: '问卷调研',
-        title: '问卷调研',
+        remark: '投票调研',
+        title: '投票调研',
       };
 
       const newId = new ObjectId();
@@ -112,8 +112,8 @@ describe('SurveyController', () => {
       const existsSurveyId = new ObjectId();
       const params = {
         surveyType: 'normal',
-        remark: '问卷调研',
-        title: '问卷调研',
+        remark: '投票调研',
+        title: '投票调研',
         createMethod: 'copy',
         createFrom: existsSurveyId.toString(),
       };
@@ -181,7 +181,7 @@ describe('SurveyController', () => {
         });
       } catch (error) {
         expect(error).toBeInstanceOf(HttpException);
-        expect(error.message).toBe('请添加题目后重新保存问卷');
+        expect(error.message).toBe('请添加题目后重新保存投票');
       }
     });
   });

@@ -83,7 +83,7 @@ export class SurveyMetaService {
   async pausingSurveyMeta(survey: SurveyMeta) {
     if (survey?.curStatus?.status === RECORD_STATUS.NEW) {
       throw new HttpException(
-        '问卷不能暂停',
+        '投票不能暂停',
         EXCEPTION_CODE.SURVEY_STATUS_TRANSFORM_ERROR,
       );
     }
@@ -273,7 +273,7 @@ export class SurveyMetaService {
             otherQuery.groupId = groupId;
           }
         }
-        // 引入空间之前，新建的问卷只有owner字段，引入空间之后，新建的问卷多了ownerId字段，使用owenrId字段进行关联更加合理，此处做了兼容
+        // 引入空间之前，新建的投票只有owner字段，引入空间之后，新建的投票多了ownerId字段，使用owenrId字段进行关联更加合理，此处做了兼容
         // query.$or = [
         //   {
         //     owner: username,

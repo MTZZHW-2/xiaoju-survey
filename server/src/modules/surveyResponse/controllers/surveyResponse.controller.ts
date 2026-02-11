@@ -167,7 +167,7 @@ export class SurveyResponseController {
     }
     if (responseSchema?.subStatus?.status === RECORD_SUB_STATUS.PAUSING) {
       throw new HttpException(
-        '该问卷已暂停，无法提交',
+        '该投票已暂停，无法提交',
         EXCEPTION_CODE.RESPONSE_PAUSING,
       );
     }

@@ -39,7 +39,7 @@
   
   // api调用方式
   Survey.show({
-    id: '${surveyPath.value || 'xxx'}', // 问卷投放id
+    id: '${surveyPath.value || 'xxx'}', // 投票投放id
     type: 'card',
     onSuccess: () => {},
     onError: (error) => { console.log(error.message) }
@@ -60,7 +60,7 @@ Survey.init({
 
 // card组件接入方式
 <SurveyCard
-  id='${surveyPath.value || 'xxx'}' // 问卷投放id
+  id='${surveyPath.value || 'xxx'}' // 投票投放id
   type='card'
   onSuccess={() => {}}
   onError={(error) => { console.log(error.message) }}

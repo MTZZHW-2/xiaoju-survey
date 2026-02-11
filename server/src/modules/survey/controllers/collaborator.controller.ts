@@ -84,7 +84,7 @@ export class CollaboratorController {
 
     if (user._id.toString() === req.surveyMeta.ownerId) {
       throw new HttpException(
-        '不能给问卷所有者授权',
+        '不能给投票所有者授权',
         EXCEPTION_CODE.PARAMETER_ERROR,
       );
     }
@@ -138,7 +138,7 @@ export class CollaboratorController {
       for (const collaboratorUserId of collaboratorUserIdList) {
         if (collaboratorUserId === req.surveyMeta.ownerId) {
           throw new HttpException(
-            '不能给问卷所有者授权',
+            '不能给投票所有者授权',
             EXCEPTION_CODE.PARAMETER_ERROR,
           );
         }
@@ -325,7 +325,7 @@ export class CollaboratorController {
       throw new HttpException('投票不存在', EXCEPTION_CODE.SURVEY_NOT_FOUND);
     }
 
-    // 问卷owner，有问卷的权限
+    // 投票owner，有投票的权限
     if (
       surveyMeta?.ownerId === userId ||
       surveyMeta?.owner === req.user.username

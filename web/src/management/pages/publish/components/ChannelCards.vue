@@ -55,9 +55,9 @@ const { surveyId, schema } = storeToRefs(editStore)
 const channelStore = useChannelStore()
 const CHANNEL_TYPE_DSEC = {
   [CHANNEL_TYPE.SHORT_LINK]: '方式描述方式描述方式描述方式描述方式描述方式描述方式描述方式描述',
-  [CHANNEL_TYPE.INJECT_WEB]: "将问卷通过SDK方式嵌入到网页中，适合弹窗、信息流等。",
-  [CHANNEL_TYPE.INJECT_APP]: "将问卷通过SDK方式嵌入到IOS、Android等应用中。",
-  [CHANNEL_TYPE.INJECT_MP]: "将问卷通过SDK嵌入到小程序中，在小程序中进行调查收集。",
+  [CHANNEL_TYPE.INJECT_WEB]: "将投票通过SDK方式嵌入到网页中，适合弹窗、信息流等。",
+  [CHANNEL_TYPE.INJECT_APP]: "将投票通过SDK方式嵌入到IOS、Android等应用中。",
+  [CHANNEL_TYPE.INJECT_MP]: "将投票通过SDK嵌入到小程序中，在小程序中进行调查收集。",
 }
 
 const data = [

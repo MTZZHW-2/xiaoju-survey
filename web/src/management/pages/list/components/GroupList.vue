@@ -156,7 +156,7 @@ const handleModify = (id: string) => {
 }
 const handleDelete = (id: string) => {
   ElMessageBox.confirm(
-    '删除分组后，属于该分组的问卷将会自动更换到“未分组”下，是否确认本次删除？',
+    '删除分组后，属于该分组的投票将会自动更换到“未分组”下，是否确认本次删除？',
     '提示',
     {
       confirmButtonText: '确定',

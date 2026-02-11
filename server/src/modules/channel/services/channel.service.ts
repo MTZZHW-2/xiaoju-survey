@@ -125,7 +125,7 @@ export class ChannelService {
     });
   }
 
-  // 问卷下的所有渠道
+  // 投票下的所有渠道
   async findAllBySurveyId(surveyId: string) {
     return await this.channelRepository.find({
       where: {

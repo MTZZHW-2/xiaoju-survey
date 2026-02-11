@@ -16,8 +16,8 @@ export default {
       label: '提示文案',
       type: 'RichText',
       key: 'msgContent.msg_9001',
-      placeholder: '问卷已过期',
-      value: '问卷已过期',
+      placeholder: '投票已过期',
+      value: '投票已过期',
       labelStyle: {
         'font-weight': 'bold'
       }

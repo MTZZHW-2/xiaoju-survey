@@ -6,20 +6,20 @@
         <div class="panel-background"></div>
         <div v-if="messages.length === 0" class="initial-state">
           <div class="welcome-title">您好，我叫XIAOJU</div>
-          <div class="welcome-sub">欢迎使用AI生成问卷！目前，我能够通过自然语言生成基础调研类问卷。例如，我可以生成：</div>
+          <div class="welcome-sub">欢迎使用AI生成投票！目前，我能够通过自然语言生成基础调研类投票。例如，我可以生成：</div>
           <div class="example-buttons">
             <div 
               class="example-button"
-              @click="handleExampleClick('课程签到问卷')"
-            >课程签到问卷</div>
+              @click="handleExampleClick('课程签到投票')"
+            >课程签到投票</div>
             <div 
               class="example-button"
-              @click="handleExampleClick('平台用户满意度调研问卷')"
-            >平台用户满意度调研问卷</div>
+              @click="handleExampleClick('平台用户满意度调研投票')"
+            >平台用户满意度调研投票</div>
             <div 
               class="example-button"
-              @click="handleExampleClick('奖品发放地址收集问卷')"
-            >奖品发放地址收集问卷</div>
+              @click="handleExampleClick('奖品发放地址收集投票')"
+            >奖品发放地址收集投票</div>
         
           </div>
         </div>
@@ -44,7 +44,7 @@
             @mouseleave="onQuestionTemplateLeave"
           >
             <div class="formula-title">
-              <span class="title">问卷生成万能公式</span>
+              <span class="title">投票生成万能公式</span>
               <span class="copy" @click="handleCopyTemplate">
                 复制
               </span>
@@ -55,17 +55,17 @@
             </p>
             <p class="formula-tip">
               <span class="bold">2.调研品牌：</span>
-              <span>请提供品牌的名称及相关信息。帮助我们更准确地生成问卷内容。</span>
+              <span>请提供品牌的名称及相关信息。帮助我们更准确地生成投票内容。</span>
             </p>
             <p class="formula-tip">
               <span class="bold">3.调研目的：</span>
               <span
-                >请明确您的调查目的，例如：了解产品满意度、客户需求分析、市场竞争格局等。这将引导问卷的整体结构和问题设置。</span
+                >请明确您的调查目的，例如：了解产品满意度、客户需求分析、市场竞争格局等。这将引导投票的整体结构和问题设置。</span
               >
             </p>
             <p class="formula-tip">
               <span class="bold">4.题目数量：</span>
-              <span>请提供期望的问卷长度范围，便于AI参考（上限12道题）。</span>
+              <span>请提供期望的投票长度范围，便于AI参考（上限12道题）。</span>
             </p>
           </div>
         </transition>
@@ -92,7 +92,7 @@
             @input="onInput"
             input-style="height: 114px;box-shadow: none;background: transparent;padding-top: 10px;"
             @keydown="handleKeydown"
-            placeholder="请输入您想生成的问卷相关描述（目前暂不支持通过对话修改已生成的问卷）"
+            placeholder="请输入您想生成的投票相关描述（目前暂不支持通过对话修改已生成的投票）"
           />
           <img 
             src="/imgs/AI/icon_Sent.svg" 
@@ -116,8 +116,8 @@
         </div>
       </div>
       <div class="disclaimer">
-        <span class="normal-text">问卷内容由AI生成，无法保证真实准确，仅供参考，请遵守</span>
-        <a >《AI生成问卷使用协议》</a>
+        <span class="normal-text">投票内容由AI生成，无法保证真实准确，仅供参考，请遵守</span>
+        <a >《AI生成投票使用协议》</a>
       </div>
     </div>
   </div>
@@ -389,9 +389,9 @@ const handleDislike = () => {
 }
 
 const TEMPLATES = {
-  '课程签到问卷': '调研对象：大学生\n调研目的：课堂效果\n题目数量期望：3道题',
-  '平台用户满意度调研问卷': '调研对象：平台用户\n调研目的：满意度调研\n题目数量期望：5道题',
-  '奖品发放地址收集问卷': '调研对象：活动中奖用户\n调研目的：收集邮寄地址\n题目数量期望：3道题'
+  '课程签到投票': '调研对象：大学生\n调研目的：课堂效果\n题目数量期望：3道题',
+  '平台用户满意度调研投票': '调研对象：平台用户\n调研目的：满意度调研\n题目数量期望：5道题',
+  '奖品发放地址收集投票': '调研对象：活动中奖用户\n调研目的：收集邮寄地址\n题目数量期望：3道题'
 };
 
 const handleExampleClick = (type: keyof typeof TEMPLATES) => {
@@ -399,9 +399,9 @@ const handleExampleClick = (type: keyof typeof TEMPLATES) => {
 }
 
 const templateContentToCopy = `调研对象：请提供关于您投放对象的描述，例如年龄、性别、职业等。
-调研品牌：请提供品牌的名称及相关信息。帮助我们更准确地生成问卷内容。
-调研目的：请明确您的调查目的，例如：了解产品满意度、客户需求分析、市场竞争格局等。这将引导问卷的整体结构和问题设置。
-题目数量期望：请提供期望的问卷长度范围，便于AI参考（上限12道题）。`
+调研品牌：请提供品牌的名称及相关信息。帮助我们更准确地生成投票内容。
+调研目的：请明确您的调查目的，例如：了解产品满意度、客户需求分析、市场竞争格局等。这将引导投票的整体结构和问题设置。
+题目数量期望：请提供期望的投票长度范围，便于AI参考（上限12道题）。`
 
 const handleCopyTemplate = async () => {
   try {

@@ -17,6 +17,6 @@ export class UpdateMessagePushingTaskDto {
   @ApiProperty({ description: '触发时机' })
   triggerHook?: MESSAGE_PUSHING_HOOK;
 
-  @ApiProperty({ description: '绑定的问卷id', required: false })
+  @ApiProperty({ description: '绑定的投票id', required: false })
   surveys?: string[];
 }

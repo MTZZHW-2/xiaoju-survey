@@ -23,7 +23,7 @@ export class CollaboratorDto {
 }
 
 export class BatchSaveCollaboratorDto {
-  @ApiProperty({ description: '问卷id', required: true })
+  @ApiProperty({ description: '投票id', required: true })
   surveyId: string;
 
   @ApiProperty({ description: '协作人列表', required: true, isArray: true })

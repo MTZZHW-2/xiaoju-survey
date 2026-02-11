@@ -149,7 +149,7 @@
             返回
           </el-button>
         </div>
-      <h2 class="nav-title">AI智能生成问卷</h2>
+      <h2 class="nav-title">AI智能生成投票</h2>
       <el-button type="primary"  class="publish-btn"  @click="onShowCreateForm">确定创建</el-button>
       </div>
       <AIGenerate @change="onAIGenerteChange"></AIGenerate>

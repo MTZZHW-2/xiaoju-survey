@@ -2,7 +2,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import Joi from 'joi';
 
 export class CreateDownloadDto {
-  @ApiProperty({ description: '问卷id', required: true })
+  @ApiProperty({ description: '投票id', required: true })
   surveyId: string;
   @ApiProperty({ description: '是否脱敏', required: false })
   isMasked: boolean;

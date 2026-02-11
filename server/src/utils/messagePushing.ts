@@ -4,9 +4,9 @@ export enum VALUE_TYPE {
 }
 
 /**
- * 对问卷的题目列表和提交的数据进行组合
+ * 对投票的题目列表和提交的数据进行组合
  * @param param0.surveyResponse 回收的数据
- * @param param0.responseSchema 问卷的配置
+ * @param param0.responseSchema 投票的配置
  * @returns 组装好的数据
  */
 export const getPushingData = ({
@@ -77,7 +77,7 @@ export const getPushingData = ({
         value,
       };
     });
-  // 返回问卷id、问卷path、回收id和组装好的问卷和答案数据
+  // 返回投票id、投票path、回收id和组装好的投票和答案数据
   return {
     surveyId: surveyId,
     surveyPath: surveyPath,

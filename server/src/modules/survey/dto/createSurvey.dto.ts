@@ -2,13 +2,13 @@ import { ApiProperty } from '@nestjs/swagger';
 import Joi from 'joi';
 
 export class CreateSurveyDto {
-  @ApiProperty({ description: '问卷标题', required: true })
+  @ApiProperty({ description: '投票标题', required: true })
   title: string;
 
-  @ApiProperty({ description: '问卷备注', required: false })
+  @ApiProperty({ description: '投票备注', required: false })
   remark: string;
 
-  @ApiProperty({ description: '问卷类型，复制问卷必传', required: false })
+  @ApiProperty({ description: '投票类型，复制投票必传', required: false })
   surveyType: string;
 
   @ApiProperty({ description: '创建方法', required: false })
@@ -17,10 +17,10 @@ export class CreateSurveyDto {
   @ApiProperty({ description: '创建来源', required: false })
   createFrom?: string;
 
-  @ApiProperty({ description: '问卷创建在哪个空间下', required: false })
+  @ApiProperty({ description: '投票创建在哪个空间下', required: false })
   workspaceId?: string;
 
-  @ApiProperty({ description: '问卷创建在哪个分组下', required: false })
+  @ApiProperty({ description: '投票创建在哪个分组下', required: false })
   groupId?: string;
 
   @ApiProperty({ description: '题目列表', required: false })

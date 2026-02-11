@@ -563,7 +563,7 @@ describe('SurveyResponseController', () => {
     //   jest.spyOn(openAuthGuard, 'canActivate')
     //     .mockResolvedValueOnce(true);
 
-    //   // Mock 问卷暂停状态
+    //   // Mock 投票暂停状态
     //   jest.spyOn(responseSchemaService, 'getResponseSchemaByPath')
     //     .mockResolvedValueOnce({
     //       ...mockResponseSchema,
@@ -576,7 +576,7 @@ describe('SurveyResponseController', () => {
     //   await expect(controller.createResponseWithOpen(reqBody))
     //     .rejects
     //     .toThrow(new HttpException(
-    //       '该问卷已暂停，无法提交',
+    //       '该投票已暂停，无法提交',
     //       EXCEPTION_CODE.RESPONSE_PAUSING
     //     ));
     // });

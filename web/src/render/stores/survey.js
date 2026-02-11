@@ -78,7 +78,7 @@ export const useSurveyStore = defineStore('survey', () => {
       isSuccess = false
       setErrorInfo({
         errorType: 'overTime',
-        errorMsg: `<p>问卷未到开始填写时间，暂时无法进行填写<p/>
+        errorMsg: `<p>投票未到开始填写时间，暂时无法进行填写<p/>
                    <p>开始时间为: ${beginTime}</p>`
       })
     } else if (now > new Date(endTime).getTime()) {
@@ -153,7 +153,7 @@ export const useSurveyStore = defineStore('survey', () => {
     if (!canFillQuestionnaire(option.baseConf, option.submitConf)) {
       return
     }
-    // 加载空白问卷
+    // 加载空白投票
     clearFormData(option)
   }
 

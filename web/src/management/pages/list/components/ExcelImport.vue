@@ -112,7 +112,7 @@
     </div>
     <template #footer>
       <div class="dialog-footer error-dialog-footer">
-        <a href="/public/excel_survey_template.xlsx" download="问卷题目Excel导入模板.xlsx" class="download-link">
+        <a href="/public/excel_survey_template.xlsx" download="投票题目Excel导入模板.xlsx" class="download-link">
           <el-button type="default" plain class="download-button">
             <i class="iconfont icon-xiazai button-icon"></i>
             <span class="download-button-text">下载Excel模版</span>
@@ -193,7 +193,7 @@ const textTypeMap = (Object.keys(typeTagLabels) as Array<QUESTION_TYPE>).reduce(
   return pre
 }, {} as Record<string, string>)
 
-// 将后端返回的Excel解析数据转换为问卷格式的题目列表
+// 将后端返回的Excel解析数据转换为投票格式的题目列表
 const excelToSchema = (excelQuestions: Array<{title: string, type: string, options: string}>) => {
   const questions = []
 
@@ -297,7 +297,7 @@ const submitUpload = async () => {
     });
 
     if (response.data.code === 200) {
-      // 将Excel数据转换为问卷格式的题目列表
+      // 将Excel数据转换为投票格式的题目列表
       const excelQuestions = response.data.data.questions;
       const questionList = excelToSchema(excelQuestions);
 

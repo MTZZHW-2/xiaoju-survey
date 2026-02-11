@@ -1,5 +1,5 @@
 /**
- * @description 问卷题目类型
+ * @description 投票题目类型
  */
 export enum QUESTION_TYPE {
   /**

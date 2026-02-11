@@ -10,9 +10,9 @@
           <div class="container-content">
             <div class="box-link">
               <!-- <span class="launch-tip"
-                >说明：若您的问卷投放对象，涉及14周岁以下的用户，需征得其监护人的同意。</span
+                >说明：若您的投票投放对象，涉及14周岁以下的用户，需征得其监护人的同意。</span
               > -->
-              <h2>问卷链接</h2>
+              <h2>投票链接</h2>
               <div class="main-channel-wrap">
                 <ChannelRow
                   :disable-delete="true"
@@ -61,8 +61,8 @@ import ChannelCards from './components/ChannelCards.vue'
 import Navbar from './components/Navbar.vue'
 
 const defaultConfig = {
-  title: '问卷未发布',
-  desc: '点击发布后，问卷就可以对外投放了哦！',
+  title: '投票未发布',
+  desc: '点击发布后，投票就可以对外投放了哦！',
   img: '/imgs/icons/unpublished.webp'
 }
 const channelStore = useChannelStore()

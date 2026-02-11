@@ -20,7 +20,7 @@ export const getDownloadTaskList = ({ pageIndex, pageSize }) => {
   })
 }
 
-//问卷删除
+//投票删除
 export const deleteDownloadTask = (taskId) => {
   return axios.post('/downloadTask/deleteDownloadTask', {
     taskId

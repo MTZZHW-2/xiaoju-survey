@@ -7,9 +7,9 @@ export enum CHANNEL_TYPE {
 }
 export const CHANNEL_TYPE_TEXT = {
   [CHANNEL_TYPE.SHORT_LINK]: '短链接',
-  [CHANNEL_TYPE.INJECT_WEB]: 'Web嵌入问卷',
-  [CHANNEL_TYPE.INJECT_APP]: 'App嵌入问卷',
-  [CHANNEL_TYPE.INJECT_MP]: '小程序嵌入问卷',
+  [CHANNEL_TYPE.INJECT_WEB]: 'Web嵌入投票',
+  [CHANNEL_TYPE.INJECT_APP]: 'App嵌入投票',
+  [CHANNEL_TYPE.INJECT_MP]: '小程序嵌入投票',
 };
 // 投放状态，因为关闭后还可以开启所以这里的关闭对应暂停操作
 export enum CHANNEL_STATUS {

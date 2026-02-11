@@ -153,7 +153,7 @@ export class SurveyController {
     if (!surveyInfo?.configData?.dataConf?.dataList?.length) {
       this.logger.error('确少题目数据');
       throw new HttpException(
-        '请添加题目后重新保存问卷',
+        '请添加题目后重新保存投票',
         EXCEPTION_CODE.PARAMETER_ERROR,
       );
     }
@@ -179,8 +179,8 @@ export class SurveyController {
         return {
           code: EXCEPTION_CODE.SURVEY_SAVE_CONFLICT,
           errmsg: isSameOperator
-            ? '当前问卷已在其它页面开启编辑，刷新以获取最新内容'
-            : `当前问卷已由 ${preOperator.username} 编辑，刷新以获取最新内容`,
+            ? '当前投票已在其它页面开启编辑，刷新以获取最新内容'
+            : `当前投票已由 ${preOperator.username} 编辑，刷新以获取最新内容`,
         };
       }
     }
@@ -416,7 +416,7 @@ export class SurveyController {
     const surveyMeta = req.surveyMeta;
     if (surveyMeta.isDeleted) {
       throw new HttpException(
-        '问卷已删除，无法发布',
+        '投票已删除，无法发布',
         EXCEPTION_CODE.SURVEY_NOT_FOUND,
       );
     }
@@ -429,7 +429,7 @@ export class SurveyController {
 
     if (await this.contentSecurityService.isForbiddenContent({ text })) {
       throw new HttpException(
-        '问卷存在非法关键字，不允许发布',
+        '投票存在非法关键字，不允许发布',
         EXCEPTION_CODE.SURVEY_CONTENT_NOT_ALLOW,
       );
     }

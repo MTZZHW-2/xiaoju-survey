@@ -162,7 +162,7 @@ const handleModify = async (id: string) => {
   showSpaceModify.value = true
 }
 const handleDelete = (id: string) => {
-  ElMessageBox.confirm('删除后团队内的问卷将同步被删除，是否确认本次删除？', '提示', {
+  ElMessageBox.confirm('删除后团队内的投票将同步被删除，是否确认本次删除？', '提示', {
     confirmButtonText: '确定',
     cancelButtonText: '取消',
     type: 'warning'

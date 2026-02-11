@@ -1,4 +1,4 @@
-// 问卷配置内容定义
+// 投票配置内容定义
 
 export interface TitleConfig {
   mainTitle: string;
@@ -11,7 +11,7 @@ export interface BannerConfig {
   postImg: string;
 }
 
-// 问卷头部内容：标题和头图
+// 投票头部内容：标题和头图
 export interface BannerConf {
   titleConfig: TitleConfig;
   bannerConfig: BannerConfig;
