@@ -39,12 +39,6 @@ export const useWorkSpaceStore = defineStore('workSpace', () => {
       children: []
     },
     {
-      icon: 'icon-tuanduikongjian',
-      name: '团队空间',
-      id: MenuType.SpaceGroup,
-      children: []
-    },
-    {
       icon: 'icon-huishouzhan',
       name: '回收站',
       id: MenuType.RecycleBin,
@@ -76,7 +70,7 @@ export const useWorkSpaceStore = defineStore('workSpace', () => {
         })
         workSpaceList.value = list
         workSpaceListTotal.value = count
-        spaceMenus.value[1].children = workSpace
+        // spaceMenus.value[1].children = workSpace // 已移除团队空间功能
       } else {
         ElMessage.error('getSpaceList' + res.errmsg)
       }

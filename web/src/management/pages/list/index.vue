@@ -356,12 +356,13 @@ const onCloseModifyInTeamWork = (data: IWorkspace) => {
       currentData.memberTotal = data.members.length
       currentData.description = data.description
     }
-    const currentMenus: any = spaceMenus.value?.[1]?.children?.find(
-      (item: { id: string; name: string }) => item.id === data._id
-    )
-    if (currentMenus) {
-      currentMenus.name = data.name
-    }
+    // 已移除团队空间菜单功能
+    // const currentMenus: any = spaceMenus.value?.[1]?.children?.find(
+    //   (item: { id: string; name: string }) => item.id === data._id
+    // )
+    // if (currentMenus) {
+    //   currentMenus.name = data.name
+    // }
   }
 }
 
