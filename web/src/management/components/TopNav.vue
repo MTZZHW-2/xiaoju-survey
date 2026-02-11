@@ -3,7 +3,7 @@
     <div class="left">
       <el-menu router default-active-index="survey" class="el-menu-demo" mode="horizontal">
         <el-menu-item index="survey">
-          <router-link :to="{ name: 'survey' }">问卷列表</router-link>
+          <router-link :to="{ name: 'survey' }">投票列表</router-link>
         </el-menu-item>
         <el-menu-item index="download">
           <router-link :to="{ name: 'download' }">下载中心</router-link>

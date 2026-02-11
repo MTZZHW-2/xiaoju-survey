@@ -26,7 +26,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import('../pages/list/index.vue'),
     meta: {
       needLogin: true,
-      title: '问卷列表'
+      title: '投票列表'
     }
   },
   {
