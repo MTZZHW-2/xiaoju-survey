@@ -1,14 +1,7 @@
 <template>
-  <div
-    class="login-page"
-    :style="{
-      background: `url('/imgs/create/background.webp') no-repeat bottom right`,
-      'background-size': 'cover'
-    }"
-  >
+  <div class="login-page">
     <div class="login-top">
-      <img src="/imgs/Logo.webp" alt="logo" />
-      <span>您好，请登录</span>
+
     </div>
     <div class="login-box">
       <el-form
@@ -27,15 +20,6 @@
           <el-input type="password" v-model="formData.password" size="large"></el-input>
         </el-form-item>
 
-        <el-form-item label="" v-if="passwordStrength">
-          <span
-            class="strength"
-            v-for="item in 3"
-            :key="item"
-            :style="{ backgroundColor: strengthColor[item - 1][passwordStrength] }"
-          ></span>
-        </el-form-item>
-
         <el-form-item label="验证码" prop="captcha">
           <div class="captcha-wrapper">
             <el-input style="width: 280px" v-model="formData.captcha" size="large"></el-input>
@@ -44,13 +28,6 @@
         </el-form-item>
 
         <el-form-item class="button-group">
-          <el-button
-            :loading="pending.register"
-            class="button register-button"
-            @click="submitForm('register')"
-          >
-            注册
-          </el-button>
           <el-button
             :loading="pending.login"
             size="small"
@@ -75,7 +52,7 @@ import 'element-plus/theme-chalk/src/message.scss'
 
 import { debounce } from 'lodash-es'
 
-import { getPasswordStrength, login, register } from '@/management/api/auth'
+import { login, register } from '@/management/api/auth'
 import { refreshCaptcha as refreshCaptchaApi } from '@/management/api/captcha'
 import { CODE_MAP } from '@/management/api/base'
 import { useUserStore } from '@/management/stores/user'
@@ -102,53 +79,23 @@ const formData = reactive<FormData>({
   captchaId: ''
 })
 
-// 每个滑块不同强度的颜色，索引0对应第一个滑块
-const strengthColor = reactive([
-  {
-    Strong: '#67C23A',
-    Medium: '#ebb563',
-    Weak: '#f78989'
-  },
-  {
-    Strong: '#67C23A',
-    Medium: '#ebb563',
-    Weak: '#2a598a'
-  },
-  {
-    Strong: '#67C23A',
-    Medium: '#2a598a',
-    Weak: '#2a598a'
-  }
-])
-
 // 密码内容校验
 const passwordValidator = (_: any, value: any, callback: any) => {
   if (!value) {
     callback(new Error('请输入密码'))
-    passwordStrength.value = undefined
     return
   }
 
   if (value.length < 6 || value.length > 16) {
     callback(new Error('长度在 6 到 16 个字符'))
-    passwordStrength.value = undefined
     return
   }
 
   if (!/^[a-zA-Z0-9!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+$/.test(value)) {
     callback(new Error('只能输入数字、字母、特殊字符'))
-    passwordStrength.value = undefined
     return
   }
-  passwordStrengthHandle(value)
   callback()
-}
-
-const passwordStrengthHandle = async (value: string) => {
-  const res: any = await getPasswordStrength(value)
-  if (res.code === CODE_MAP.SUCCESS) {
-    passwordStrength.value = res.data
-  }
 }
 
 const rules = {
@@ -182,7 +129,6 @@ const pending = reactive<Pending>({
 
 const captchaImgData = ref<string>('')
 const formDataRef = ref<any>(null)
-const passwordStrength = ref<'Strong' | 'Medium' | 'Weak'>()
 
 const submitForm = (type: 'login' | 'register') => {
   formDataRef.value.validate(async (valid: boolean) => {
@@ -253,7 +199,7 @@ const refreshCaptcha = async () => {
     background: #fff;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     img {
@@ -282,7 +228,7 @@ const refreshCaptcha = async () => {
     }
 
     .button {
-      width: 204px;
+      width: 100%;
       height: 40px;
       font-size: 14px;
     }
@@ -313,17 +259,6 @@ const refreshCaptcha = async () => {
         width: 120px;
         margin-left: 20px;
       }
-    }
-  }
-
-  .strength {
-    display: inline-block;
-    width: 30%;
-    height: 6px;
-    border-radius: 8px;
-    background: red;
-    &:not(:first-child) {
-      margin-left: 8px;
     }
   }
 }
