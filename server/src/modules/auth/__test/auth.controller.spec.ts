@@ -172,7 +172,7 @@ describe('AuthController', () => {
 
       await expect(controller.login(mockUserInfo)).rejects.toThrow(
         new HttpException(
-          '账号未注册，请进行注册',
+          '账号不存在',
           EXCEPTION_CODE.USER_NOT_EXISTS,
         ),
       );
