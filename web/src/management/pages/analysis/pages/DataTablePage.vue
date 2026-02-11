@@ -3,7 +3,7 @@
     <template v-if="tableData.total">
       <div class="menus">
         <el-button type="primary" :loading="isDownloading" @click="onDownload"
-          >导出全部数据</el-button
+          >导出数据</el-button
         >
         <el-switch
           class="desensitize-switch"
@@ -30,29 +30,7 @@
       <EmptyIndex :data="noDataConfig" />
     </div>
 
-    <el-dialog v-model="downloadDialogVisible" title="导出确认" width="500" style="padding: 40px">
-      <el-form :model="downloadForm" label-width="100px" label-position="left">
-        <el-form-item label="导出内容">
-          <el-radio-group v-model="downloadForm.isMasked">
-            <el-radio :value="true">脱敏数据</el-radio>
-            <el-radio :value="false">原回收数据</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <div class="download-tips">
-          <div>注：</div>
-          <div>
-            <p>推荐优先下载脱敏数据，如手机号：1***3。</p>
-            <p>原回收数据可能存在敏感信息，请谨慎下载。</p>
-          </div>
-        </div>
-      </el-form>
-      <template #footer>
-        <div class="dialog-footer">
-          <el-button @click="downloadDialogVisible = false">取消</el-button>
-          <el-button type="primary" @click="confirmDownload()"> 确认 </el-button>
-        </div>
-      </template>
-    </el-dialog>
+
   </div>
 </template>
 
@@ -77,16 +55,11 @@ const dataTableState = reactive({
   currentPage: 1,
   isShowOriginData: false,
   tmpIsShowOriginData: false,
-  isDownloading: false,
-  downloadDialogVisible: false,
-  downloadForm: {
-    isMasked: true
-  }
+  isDownloading: false
 })
 
-const { mainTableLoading, tableData, isShowOriginData, downloadDialogVisible, isDownloading } =
+const { mainTableLoading, tableData, isShowOriginData, isDownloading } =
   toRefs(dataTableState)
-const downloadForm = dataTableState.downloadForm
 
 const route = useRoute()
 
@@ -155,10 +128,6 @@ onMounted(() => {
   init()
 })
 const onDownload = async () => {
-  dataTableState.downloadDialogVisible = true
-}
-
-const confirmDownload = async () => {
   if (isDownloading.value) {
     return
   }
@@ -166,9 +135,8 @@ const confirmDownload = async () => {
     isDownloading.value = true
     const createRes = await createDownloadTask({
       surveyId: route.params.id,
-      isMasked: downloadForm.isMasked
+      isMasked: false
     })
-    dataTableState.downloadDialogVisible = false
     if (createRes.code !== 200) {
       ElMessage.error('导出失败，请重试')
     }

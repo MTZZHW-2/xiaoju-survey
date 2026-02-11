@@ -59,7 +59,7 @@ export function getListHeadByDataList(dataList) {
   });
   listHead.push({
     field: 'diffTime',
-    title: '答题耗时（秒）',
+    title: '耗时（秒）',
     type: QUESTION_TYPE.TEXT,
   });
   listHead.push({
