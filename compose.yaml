@@ -4,8 +4,8 @@ services:
   mongo:
     image: mongo:4
     restart: always
-    ports:
-      - "27017:27017"
+    # ports:
+    #   - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
@@ -17,7 +17,7 @@ services:
     image: "xrcyjs/survey-app:latest"
     restart: always
     ports:
-      - "8080:8080"
+      - "43756:8080"
     environment:
       XIAOJU_SURVEY_MONGO_URL: mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017
       XIAOJU_SURVEY_MONGO_AUTH_SOURCE: ${XIAOJU_SURVEY_MONGO_AUTH_SOURCE}
