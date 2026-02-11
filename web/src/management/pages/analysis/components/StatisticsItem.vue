@@ -12,7 +12,6 @@
           <p ref="titleRef" class="text" v-html="cleanRichText(StatisticsData.title)"></p>
         </template>
       </el-popover>
-      <p v-if="questionTypeDesc" class="type">{{ questionTypeDesc }}</p>
     </div>
     <div class="separate-item-content">
       <div class="chart-wrapper">
@@ -43,7 +42,6 @@ import {
 import useCharts from '@/management/hooks/useCharts'
 import useStatisticsItemChart from '@/management/hooks/useStatisticsItemChart'
 import { cleanRichText } from '@/common/xss'
-import { menuItems } from '@/management/config/questionMenuConfig'
 import DataTable from './DataTable.vue'
 import useResizeObserver from '@/management/hooks/useResizeObserver'
 
@@ -56,10 +54,6 @@ const props = defineProps({
 
 const questionType = computed(() => {
   return props?.StatisticsData?.type
-})
-
-const questionTypeDesc = computed(() => {
-  return menuItems?.[questionType.value]?.title || ''
 })
 
 // 表格数据
@@ -177,15 +171,6 @@ onMounted(() => {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-    }
-
-    .type {
-      font-size: 12px;
-      margin-left: 8px;
-      color: white;
-      background-color: var(--primary-color);
-      border-radius: 7px 3px;
-      padding: 2px 6px;
     }
   }
 
