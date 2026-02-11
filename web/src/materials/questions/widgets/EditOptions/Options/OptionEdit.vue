@@ -3,13 +3,13 @@
     <draggable
       id="sortDraggable"
       :list="optionList"
-      :disabled="true"
       handle=".drag-handle"
       @update="optionSortChange"
       itemKey="hash"
     >
       <template #item="{ element, index }">
         <div class="draggdiv dragg-handle">
+          <span class="drag-handle qicon qicon-tuodong"></span>
           <div class="input-box">
             <RichEditor
               :needUploadImage="true"
@@ -17,6 +17,21 @@
               @change="(value) => handleChange(index, value)"
             />
           </div>
+
+          <i-ep-circlePlus
+            v-if="isShowOperation"
+            class="opt-btn-icon"
+            @click="onAddOption(index)"
+          />
+          <el-tooltip
+            v-if="isShowOperation"
+            class="icon delete"
+            effect="dark"
+            content="删除"
+            placement="top"
+          >
+            <i-ep-remove @click="deleteOption(index)" class="opt-btn-icon delete" />
+          </el-tooltip>
         </div>
       </template>
     </draggable>

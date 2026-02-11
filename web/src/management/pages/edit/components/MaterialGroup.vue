@@ -1,7 +1,7 @@
 <template>
   <draggable
     v-model="renderData"
-    :disabled="true"
+
     handle=".question-wrapper.is-move"
     filter=".question-wrapper.is-move .question.isSelected"
     :preventOnFilter="false"
