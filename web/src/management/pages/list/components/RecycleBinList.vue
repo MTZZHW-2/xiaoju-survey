@@ -3,7 +3,7 @@
     <div class="filter-wrap">
       <h2>回收站</h2>
       <div class="search">
-        <TextSearch placeholder="请输入问卷标题" :value="searchVal" @search="onSearchText" />
+        <TextSearch placeholder="请输入投票标题" :value="searchVal" @search="onSearchText" />
       </div>
     </div>
     <div class="list-wrapper" v-if="total">
@@ -369,7 +369,7 @@ const onRowClick = async (row) => {
 
   try {
     await ElMessageBox.alert('该问卷已被删除，无法继续访问。', '提示', {
-      confirmButtonText: '返回问卷列表',
+      confirmButtonText: '返回投票列表',
       type: 'warning'
     })
   } catch (error) {

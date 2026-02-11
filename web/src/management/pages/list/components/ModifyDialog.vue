@@ -73,7 +73,7 @@ export default {
       MenuType,
       loadingInstance: null,
       rules: {
-        title: [{ required: true, message: '请输入问卷标题', trigger: 'blur' }]
+        title: [{ required: true, message: '请输入投票标题', trigger: 'blur' }]
       },
       current: this.getCurrent(this.questionInfo)
     }

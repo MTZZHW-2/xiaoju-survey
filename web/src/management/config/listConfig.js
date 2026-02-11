@@ -12,7 +12,7 @@ export const spaceListConfig = {
     width: 200
   },
   surveyTotal: {
-    title: '问卷数',
+    title: '投票数',
     key: 'surveyTotal',
     width: 150,
     tip: true
@@ -41,7 +41,7 @@ export const groupListConfig = {
     width: 200
   },
   surveyTotal: {
-    title: '问卷数',
+    title: '投票数',
     key: 'surveyTotal',
     width: 150,
     tip: true
@@ -120,8 +120,8 @@ export const recycleBinFieldConfig = {
 }
 
 export const noListDataConfig = {
-  title: '您还没有创建问卷',
-  desc: '赶快点击右上角立即创建问卷吧！',
+  title: '您还没有创建投票',
+  desc: '赶快点击右上角立即创建投票吧！',
   img: '/imgs/icons/list-empty.webp'
 }
 
@@ -136,17 +136,17 @@ export const noSpaceSearchDataConfig = {
   img: '/imgs/icons/list-empty.webp'
 }
 export const noGroupDataConfig = {
-  title: '您还没有创建问卷分组',
-  desc: '赶快点击右上角立即创建问卷分组吧！',
+  title: '您还没有创建投票分组',
+  desc: '赶快点击右上角立即创建投票分组吧！',
   img: '/imgs/icons/list-empty.webp'
 }
 export const noGroupSearchDataConfig = {
-  title: '没有满足该查询条件的问卷分组哦',
+  title: '没有满足该查询条件的投票分组哦',
   desc: '可以更换条件查询试试',
   img: '/imgs/icons/list-empty.webp'
 }
 export const noSearchDataConfig = {
-  title: '没有满足该查询条件的问卷',
+  title: '没有满足该查询条件的投票',
   desc: '可以更换条件查询试试',
   img: '/imgs/icons/list-empty.webp'
 }
@@ -187,9 +187,9 @@ export const statusMaps = {
 export const curStatusKey = 'curStatus.status'
 export const subStatusKey = 'subStatus.status'
 
-// 问卷类型
+// 投票类型
 export const surveyTypeSelect = {
-  label: '问卷类型',
+  label: '投票类型',
   value: [
     {
       value: '',
@@ -219,9 +219,9 @@ export const surveyTypeSelect = {
   default: ''
 }
 
-// 问卷状态
+// 投票状态
 export const curStatusSelect = {
-  label: '问卷状态',
+  label: '投票状态',
   value: [
     {
       value: '',

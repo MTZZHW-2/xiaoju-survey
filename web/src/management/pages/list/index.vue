@@ -43,7 +43,7 @@
               v-if="workSpaceId || groupId"
             >
               <i class="iconfont icon-chuangjian"></i>
-              <span>创建问卷</span>
+              <span>创建投票</span>
             </el-button>
           </div>
         </div>
@@ -220,7 +220,7 @@ const tableTitle = computed(() => {
   } else if (menuType.value === MenuType.RecycleBin) {
     return ''
   } else {
-    return currentTeamSpace.value?.name || '问卷列表'
+    return currentTeamSpace.value?.name || '投票列表'
   }
 })
 
@@ -486,7 +486,7 @@ const onConfirmCreate = async (formValue: { title: string; remark?: string; surv
         break;
     }
   } catch (error) {
-    console.error('创建问卷失败:', error)
+    console.error('创建投票失败:', error)
     ElMessage.error('创建失败，请稍后重试')
     callback(false)
   }
