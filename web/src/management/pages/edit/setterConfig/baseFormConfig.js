@@ -8,9 +8,9 @@ export default {
   },
   limit_tLimit: {
     key: 'tLimit',
-    label: '问卷回收总数',
+    label: '回收总数',
     type: 'InputNumber',
-    tip: '0为无限制，此功能用于限制该问卷总提交的数据量。当数据量达到限额时，该问卷将不能继续提交',
+    tip: '0为无限制，此功能用于限制该投票总提交的数据量。当数据量达到限额时，将不能继续提交',
     tipShow: true,
     placement: 'top',
     min: 0
@@ -18,7 +18,7 @@ export default {
   limit_answerTime: {
     keys: ['answerBegTime', 'answerEndTime'],
     label: '答题时段',
-    tip: '问卷仅在指定时间段内可填写',
+    tip: '仅在指定时间段内可填写',
     type: 'QuestionTimeHour',
     placement: 'top'
   },
