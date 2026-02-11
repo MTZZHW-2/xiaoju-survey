@@ -2,25 +2,31 @@
   <div class="publish-result-page">
     <LeftMenu class="left" />
     <div class="right">
-      <template v-if="curStatus !== 'new'">
-        <div class="preview-container" :style="{ backgroundImage: `url('${backgroundImage}')` }">
-          <iframe :src="mainChannel.fullUrl"></iframe>
-        </div>
-        <div class="container-content">
-          <span class="launch-tip"
-            >说明：若您的问卷投放对象，涉及14周岁以下的用户，需征得其监护人的同意。</span
-          >
-          <h2>问卷链接</h2>
-          <div class="main-channel-wrap">
-            <ChannelRow
-              :disable-delete="true"
-              :data="mainChannel"
-              :style-wrap="{ marginBottom: '8px' }"
-            />
+      <div class="back-btn" @click="$router.push({ name: 'survey' })">
+        <i class="iconfont icon-fanhuijiantou"></i>
+        <span>返回</span>
+      </div>
+      <div class="content-wrapper">
+        <template v-if="curStatus !== 'new'">
+          <div class="preview-container" :style="{ backgroundImage: `url('${backgroundImage}')` }">
+            <iframe :src="mainChannel.fullUrl"></iframe>
           </div>
-        </div>
-      </template>
-      <EmptyIndex v-else :data="defaultConfig" />
+          <div class="container-content">
+            <span class="launch-tip"
+              >说明：若您的问卷投放对象，涉及14周岁以下的用户，需征得其监护人的同意。</span
+            >
+            <h2>问卷链接</h2>
+            <div class="main-channel-wrap">
+              <ChannelRow
+                :disable-delete="true"
+                :data="mainChannel"
+                :style-wrap="{ marginBottom: '8px' }"
+              />
+            </div>
+          </div>
+        </template>
+        <EmptyIndex v-else :data="defaultConfig" />
+      </div>
     </div>
   </div>
 </template>
@@ -92,11 +98,40 @@ onMounted(async () => {
     overflow: hidden;
     padding-left: 80px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 
     background: #f6f7f9;
     padding: 30px 40px 50px 40px;
+
+    .back-btn {
+      position: absolute;
+      left: 100px;
+      top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: #4a4c5b;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      .iconfont {
+        font-size: 16px;
+      }
+    }
+
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .preview-container {
