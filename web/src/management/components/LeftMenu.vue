@@ -1,6 +1,5 @@
 <template>
   <div class="nav">
-    <LogoIcon />
     <template v-for="(tab, index) in tabs" :key="tab.text + index">
       <router-link :to="tab.to" v-slot="{ isActive }" :replace="true">
         <div
@@ -33,7 +32,6 @@ import { ref, watch } from 'vue'
 import { useEditStore } from '@/management/stores/edit'
 import { useRoute } from 'vue-router'
 const route = useRoute()
-import LogoIcon from './LogoIcon.vue'
 import { SurveyPermissions } from '@/management/utils/workSpace'
 const editStore = useEditStore()
 
