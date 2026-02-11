@@ -17,22 +17,15 @@
           重新填写
         </router-link>
       </div>
-      <LogoIcon :logo-conf="logoConf" :readonly="true" />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useSurveyStore } from '../stores/survey'
-// @ts-ignore
-import communalLoader from '@materials/communals/communalLoader.js'
 
-const LogoIcon = communalLoader.loadComponent('LogoIcon')
 const surveyStore = useSurveyStore()
 
-const logoConf = computed(() => {
-  return surveyStore?.bottomConf || {}
-})
 const successMsg = computed(() => {
   const msgContent = (surveyStore?.submitConf as any)?.msgContent || {}
   return msgContent?.msg_200 || '提交成功'

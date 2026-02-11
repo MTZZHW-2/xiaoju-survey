@@ -85,7 +85,7 @@ export const useSurveyStore = defineStore('survey', () => {
       isSuccess = false
       setErrorInfo({
         errorType: 'overTime',
-        errorMsg: msgContent.msg_9001 || '您来晚了，感谢支持问卷~'
+        errorMsg: msgContent.msg_9001 || '您来晚了，感谢支持~'
       })
     } else if (answerBegTime && answerEndTime) {
       const momentNow = moment()

@@ -15,7 +15,6 @@
           @submit="handleSubmit"
         ></SubmitButton>
       </div>
-      <LogoIcon :logo-conf="logoConf" :readonly="true" />
       <VerifyDialog />
     </div>
   </div>
@@ -59,7 +58,6 @@ withDefaults(defineProps<Props>(), {
 const HeaderContent = communalLoader.loadComponent('HeaderContent')
 const MainTitle = communalLoader.loadComponent('MainTitle')
 const SubmitButton = communalLoader.loadComponent('SubmitButton')
-const LogoIcon = communalLoader.loadComponent('LogoIcon')
 
 const mainRef = ref<any>()
 const boxRef = ref<HTMLElement>()
@@ -74,7 +72,7 @@ const questionStore = useQuestionStore()
 const renderData = computed(() => questionStore.renderData)
 const isFinallyPage = computed(() => questionStore.isFinallyPage)
 const pageIndex = computed(() => questionStore.pageIndex)
-const { bannerConf, submitConf, bottomConf: logoConf, whiteData } = storeToRefs(surveyStore)
+const { bannerConf, submitConf, whiteData } = storeToRefs(surveyStore)
 const surveyPath = computed(() => surveyStore.surveyPath || '')
 
 const validate = (callback: (v: boolean) => void) => {

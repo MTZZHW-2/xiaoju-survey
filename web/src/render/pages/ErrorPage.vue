@@ -5,7 +5,6 @@
         <img class="img" :src="errorImage" />
         <div class="msg" v-html="errorMsg"></div>
       </div>
-      <LogoIcon :logo-conf="logoConf" :readonly="true" />
     </div>
   </div>
 </template>
@@ -13,11 +12,8 @@
 import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 
-import communalLoader from '@materials/communals/communalLoader.js'
 import { useErrorInfo } from '../stores/errorInfo'
 import { useSurveyStore } from '../stores/survey'
-
-const LogoIcon = communalLoader.loadComponent('LogoIcon')
 
 const surveyStore = useSurveyStore()
 const errorStore = useErrorInfo()
@@ -36,7 +32,6 @@ const errorImage = computed(() => {
 const errorMsg = computed(() => {
   return errorInfo.value.errorMsg || '提交失败'
 })
-const logoConf = computed(() => surveyStore.bottomConf || {})
 </script>
 <style lang="scss" scoped>
 .result-page-wrap {

@@ -265,7 +265,7 @@ describe('DataStatisticController', () => {
             submitTitle: '提交',
             msgContent: {
               msg_200: '提交成功',
-              msg_9001: '您来晚了，感谢支持问卷~',
+              msg_9001: '您来晚了，感谢支持~',
               msg_9002: '请勿多次提交！',
               msg_9003: '您来晚了，已经满额！',
               msg_9004: '提交失败！',
