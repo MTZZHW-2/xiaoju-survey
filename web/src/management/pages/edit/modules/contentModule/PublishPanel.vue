@@ -113,7 +113,7 @@ const handlePublish = async () => {
     if (publishRes.code === 200) {
       ElMessage.success('发布成功')
       getSchemaFromRemote()
-      router.push({ name: 'channel' })
+      router.push({ name: 'publish' })
     } else {
       ElMessage.error(`发布失败 ${publishRes.errmsg}`)
     }
