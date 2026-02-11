@@ -4,18 +4,6 @@
       <div class="result-content">
         <img src="/imgs/icons/success.webp" />
         <div class="msg" v-html="successMsg"></div>
-        <router-link
-          :to="{
-            name: 'renderPage',
-            query: {
-              t: new Date().getTime()
-            }
-          }"
-          replace
-          class="reset-link"
-        >
-          重新填写
-        </router-link>
       </div>
     </div>
   </div>
