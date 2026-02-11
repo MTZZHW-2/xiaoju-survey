@@ -39,13 +39,6 @@ const routes = [
     router: 'QuestionEditSetting',
     key: 'settings',
     next: true
-  },
-  {
-    icon: 'icon-yangshishezhi',
-    text: '皮肤设置',
-    router: 'QuestionSkinSetting',
-    key: 'skinsettings',
-    next: true
   }
 ]
 </script>
