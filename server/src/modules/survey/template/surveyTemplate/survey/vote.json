@@ -3,13 +3,13 @@
     "dataList": [
       {
         "isRequired": true,
-        "showIndex": true,
-        "showType": true,
-        "showSpliter": true,
+        "showIndex": false,
+        "showType": false,
+        "showSpliter": false,
         "type": "vote",
         "innerType": "radio",
         "field": "data606",
-        "title": "标题1",
+        "title": "标题",
         "minNum": 0,
         "maxNum": 0,
         "options": [

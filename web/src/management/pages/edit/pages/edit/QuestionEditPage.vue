@@ -3,9 +3,6 @@
     <template #center>
       <PreviewPanel />
     </template>
-    <template #right>
-      <SetterPanel />
-    </template>
   </CommonTemplate>
 </template>
 <script setup lang="ts">

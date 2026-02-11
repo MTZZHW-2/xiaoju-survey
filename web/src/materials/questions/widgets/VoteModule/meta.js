@@ -15,7 +15,7 @@ const meta = {
       name: 'title',
       propType: 'String',
       description: '这是用于描述题目标题',
-      defaultValue: '标题一'
+      defaultValue: '标题'
     },
     {
       name: 'type',
@@ -33,19 +33,19 @@ const meta = {
       name: 'showIndex',
       propType: Boolean,
       description: '显示序号',
-      defaultValue: true
+      defaultValue: false
     },
     {
       name: 'showType',
       propType: Boolean,
       description: '显示类型',
-      defaultValue: true
+      defaultValue: false
     },
     {
       name: 'showSpliter',
       propType: Boolean,
       description: '显示分割线',
-      defaultValue: true
+      defaultValue: false
     },
     {
       name: 'options',
