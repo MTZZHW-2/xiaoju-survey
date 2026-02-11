@@ -1,6 +1,5 @@
 <template>
   <div class="index">
-    <ProgressBar />
     <div class="wrapper" ref="boxRef">
       <HeaderContent v-if="pageIndex == 1" :bannerConf="bannerConf" :readonly="true" />
       <div class="content">
@@ -31,8 +30,6 @@ import MainRenderer from '../components/MainRenderer.vue'
 import AlertDialog from '../components/AlertDialog.vue'
 import ConfirmDialog from '../components/ConfirmDialog.vue'
 import VerifyDialog from '../components/VerifyDialog/index.vue'
-
-import ProgressBar from '../components/ProgressBar.vue'
 
 import { useSurveyStore } from '../stores/survey'
 import { useQuestionStore } from '../stores/question'
