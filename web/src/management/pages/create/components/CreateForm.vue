@@ -10,19 +10,19 @@
       :rules="rules"
       @submit.prevent
     >
-      <el-form-item prop="title" label="问卷名称">
+      <el-form-item prop="title" label="投票标题">
         <el-input
           v-model="form.title"
           :class="form.title ? 'nonempty' : 'empty'"
-          placeholder="请输入问卷名称"
+          placeholder="请输入投票标题"
         />
-        <p class="form-item-tip">该标题可在打开问卷的浏览器顶部展示</p>
+        <p class="form-item-tip">该标题可在打开投票的浏览器顶部展示</p>
       </el-form-item>
-      <el-form-item prop="remark" label="问卷备注">
+      <el-form-item prop="remark" label="投票备注">
         <el-input
           v-model="form.remark"
           :class="form.remark ? 'nonempty' : 'empty'"
-          placeholder="请输入备注"
+          placeholder="请输入投票备注"
         />
         <p class="form-item-tip">备注仅自己可见</p>
       </el-form-item>
@@ -72,7 +72,7 @@ const ruleForm = ref<any>(null)
 
 const state = reactive({
   rules: {
-    title: [{ required: true, message: '请输入问卷标题', trigger: 'blur' }]
+    title: [{ required: true, message: '请输入投票标题', trigger: 'blur' }]
   },
   canSubmit: true,
   form: {

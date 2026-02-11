@@ -163,7 +163,7 @@ const routes: RouteRecordRaw[] = [
     name: 'create',
     meta: {
       needLogin: true,
-      title: '创建问卷'
+      title: '创建投票'
     },
     component: () => import('../pages/create/CreatePage.vue')
   },
