@@ -1,7 +1,6 @@
 <template>
   <div class="top-nav">
     <div class="left">
-      <img class="logo-img" src="/imgs/Logo.webp" alt="logo" />
       <el-menu router default-active-index="survey" class="el-menu-demo" mode="horizontal">
         <el-menu-item index="survey">
           <router-link :to="{ name: 'survey' }">问卷列表</router-link>
@@ -50,11 +49,6 @@ const handleLogout = () => {
     display: flex;
     align-items: center;
     width: calc(100% - 200px);
-    .logo-img {
-      width: 90px;
-      height: fit-content;
-      padding-right: 20px;
-    }
     .el-menu {
       width: 100%;
       height: 56px;
