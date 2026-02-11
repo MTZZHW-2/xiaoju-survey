@@ -3,6 +3,10 @@
     <leftMenu class="left"></leftMenu>
     <div class="right">
       <div class="analysis-tabs">
+        <div class="back-btn" @click="handleNavigateHome">
+          <i class="iconfont icon-fanhui"></i>
+          <span>返回</span>
+        </div>
         <router-link
           v-for="item in analysisType"
           class="analysis-tabs__item"
@@ -21,8 +25,16 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 import LeftMenu from '@/management/components/LeftMenu.vue'
 import { analysisType } from '@/management/config/analysisConfig'
+
+const router = useRouter()
+const handleNavigateHome = () => {
+  router.push({
+    name: 'survey'
+  })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -42,6 +54,7 @@ import { analysisType } from '@/management/config/analysisConfig'
     width: 100%;
     height: 100%;
     min-width: 1300px;
+    padding-left: 80px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -60,6 +73,24 @@ import { analysisType } from '@/management/config/analysisConfig'
       align-items: center;
       background-color: #fff;
       border-bottom: 1px solid #e7e9eb;
+
+      .back-btn {
+        position: absolute;
+        left: 24px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: #92949d;
+        
+        &:hover {
+          color: $font-color-title;
+        }
+        
+        .iconfont {
+          margin-right: 5px;
+        }
+      }
 
       &__item {
         cursor: pointer;
