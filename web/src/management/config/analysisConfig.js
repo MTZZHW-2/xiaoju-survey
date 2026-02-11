@@ -41,7 +41,7 @@ export const analysisType = [
   },
   {
     value: analysisTypeMap.separateStatistics,
-    label: '分题统计',
+    label: '投票统计',
     icon: 'icon-fentitongji'
   }
 ]

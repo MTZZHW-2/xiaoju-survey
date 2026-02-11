@@ -42,7 +42,7 @@ const dataFormateConfig = {
 }
 
 /**
- * @description: 分题统计图表hook
+ * @description: 投票统计图表hook
  * @param {*} chartType
  * @param {*} data
  * @return {*} chartRef 图表实例 chartTypeList 图表类型列表 chartType 图表类型 chartData 图表数据
