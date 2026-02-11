@@ -28,14 +28,14 @@
 const routes = [
   {
     icon: 'icon-wenjuanbianji',
-    text: '问卷编辑',
+    text: '投票编辑',
     router: 'QuestionEditIndex',
     key: 'edit',
     next: true
   },
   {
     icon: 'icon-wenjuanshezhi',
-    text: '问卷设置',
+    text: '投票设置',
     router: 'QuestionEditSetting',
     key: 'settings',
     next: true

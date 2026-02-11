@@ -37,7 +37,7 @@ const editStore = useEditStore()
 
 const tabArr = [
   {
-    text: '编辑问卷',
+    text: '编辑投票',
     icon: 'icon-bianji',
     to: {
       name: 'QuestionEditIndex'
