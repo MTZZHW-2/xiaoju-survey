@@ -44,7 +44,7 @@ const tabArr = [
     }
   },
   {
-    text: '投放问卷',
+    text: '投放管理',
     icon: 'icon-toufang',
     to: {
       name: 'publish'

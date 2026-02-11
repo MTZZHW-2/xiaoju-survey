@@ -15,10 +15,7 @@
             <iframe :src="mainChannel.fullUrl"></iframe>
           </div>
           <div class="container-content">
-            <span class="launch-tip"
-              >说明：若您的问卷投放对象，涉及14周岁以下的用户，需征得其监护人的同意。</span
-            >
-            <h2>问卷链接</h2>
+            <h2>链接</h2>
             <div class="main-channel-wrap">
               <ChannelRow
                 :disable-delete="true"
