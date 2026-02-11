@@ -2,9 +2,12 @@
   <div class="publish-result-page">
     <LeftMenu class="left" />
     <div class="right">
-      <div class="back-btn" @click="$router.push({ name: 'survey' })">
-        <i class="iconfont icon-fanhuijiantou"></i>
-        <span>返回</span>
+      <div class="publish-header">
+        <div class="back-btn" @click="$router.push({ name: 'survey' })">
+          <i class="iconfont icon-fanhui"></i>
+          <span>返回</span>
+        </div>
+        <div class="header-title"></div>
       </div>
       <div class="content-wrapper">
         <template v-if="curStatus !== 'new'">
@@ -99,30 +102,42 @@ onMounted(async () => {
     padding-left: 80px;
     display: flex;
     flex-direction: column;
-
     background: #f6f7f9;
-    padding: 30px 40px 50px 40px;
 
-    .back-btn {
-      position: absolute;
-      left: 100px;
-      top: 20px;
+    .publish-header {
+      flex: none;
+      width: 100%;
+      height: 56px;
+      position: relative;
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      color: #4a4c5b;
-      font-size: 14px;
-      padding: 8px 16px;
-      border-radius: 4px;
-      transition: all 0.3s;
+      background-color: #fff;
+      border-bottom: 1px solid #e7e9eb;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.05);
+      .back-btn {
+        position: absolute;
+        left: 24px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: #92949d;
+        font-size: 14px;
+
+        &:hover {
+          color: #4a4c5b;
+        }
+
+        .iconfont {
+          margin-right: 5px;
+        }
       }
 
-      .iconfont {
-        font-size: 16px;
+      .header-title {
+        font-size: 14px;
+        font-weight: normal;
+        color: #4a4c5b;
       }
     }
 
@@ -131,6 +146,8 @@ onMounted(async () => {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 30px 40px 50px 40px;
+      overflow: auto;
     }
   }
 

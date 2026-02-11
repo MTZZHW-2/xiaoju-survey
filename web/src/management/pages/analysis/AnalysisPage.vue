@@ -82,11 +82,12 @@ const handleNavigateHome = () => {
         align-items: center;
         cursor: pointer;
         color: #92949d;
-        
+        font-size: 14px;
+
         &:hover {
-          color: $font-color-title;
+          color: #4a4c5b;
         }
-        
+
         .iconfont {
           margin-right: 5px;
         }

@@ -149,16 +149,20 @@ const seize = async (sessionId: string) => {
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  border-bottom: 1px solid #e7e9eb;
+
   > div {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
+
   .center-group {
     height: 100%;
     flex: 1;
     justify-content: center;
   }
+
   .left-group,
   .right-group {
     position: absolute;
@@ -168,7 +172,7 @@ const seize = async (sessionId: string) => {
 }
 
 .left-group {
-  left: 18px;
+  left: 24px;
 }
 .right-group {
   right: 18px;
