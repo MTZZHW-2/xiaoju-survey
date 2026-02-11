@@ -16,19 +16,19 @@ RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.li
 FROM node:18-slim
 
 # 设置工作区间
-WORKDIR /xiaoju-survey
+WORKDIR /app
 
 # 安装nginx
 RUN apt-get update && apt-get install -y nginx curl vim git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 仅复制运行需要的文件到工作区间
-COPY --from=builder /builder/web/dist/ /xiaoju-survey/web/dist/
-COPY --from=builder /builder/server/dist/ /xiaoju-survey/server/dist/
-COPY --from=builder /builder/server/node_modules/ /xiaoju-survey/server/node_modules/
-COPY --from=builder /builder/server/public/ /xiaoju-survey/server/public/
-COPY --from=builder /builder/server/package*.json /builder/server/.env* /xiaoju-survey/server/
-COPY docker-run.sh /xiaoju-survey/docker-run.sh
+COPY --from=builder /builder/web/dist/ /app/web/dist/
+COPY --from=builder /builder/server/dist/ /app/server/dist/
+COPY --from=builder /builder/server/node_modules/ /app/server/node_modules/
+COPY --from=builder /builder/server/public/ /app/server/public/
+COPY --from=builder /builder/server/package*.json /builder/server/.env* /app/server/
+COPY docker-run.sh /app/docker-run.sh
 # 覆盖nginx配置文件
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 

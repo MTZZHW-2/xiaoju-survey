@@ -1,0 +1,25 @@
+name: survey
+
+services:
+  mongo:
+    image: mongo:4
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./docker/mongodb/volumes/data/db:/data/db
+      - ./docker/mongodb/volumes/init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+
+  app:
+    image: "xrcyjs/survey-app:latest"
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      XIAOJU_SURVEY_MONGO_URL: mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017
+      XIAOJU_SURVEY_MONGO_AUTH_SOURCE: ${XIAOJU_SURVEY_MONGO_AUTH_SOURCE}
+    depends_on:
+      - mongo
