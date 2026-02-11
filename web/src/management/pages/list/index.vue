@@ -391,7 +391,7 @@ const onGroupCreate = () => {
 }
 
 const onCreate = () => {
-  showCreateMethod.value = true
+  router.push('/create')
 }
 
 const handleCloseCreateDialog = () => {

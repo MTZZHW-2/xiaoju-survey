@@ -76,8 +76,8 @@ const state = reactive({
   },
   canSubmit: true,
   form: {
-    title: '问卷调研',
-    remark: '问卷调研',
+    title: '',
+    remark: '',
     groupId:
       groupId.value === GroupState.All || groupId.value === GroupState.Not ? '' : groupId.value
   }
@@ -136,9 +136,8 @@ const submit = () => {
 <style lang="scss" scoped>
 .right-side {
   width: 538px;
-  margin: auto;
+  margin: 160px auto;
   padding-left: 24px;
-  height: 100%;
   position: relative;
   flex-shrink: 0;
 
@@ -147,7 +146,7 @@ const submit = () => {
     font-size: 24px;
     color: $font-color-title;
     letter-spacing: 0;
-    margin-top: 104px;
+    margin-top: 0;
     margin-bottom: 30px;
   }
 }
