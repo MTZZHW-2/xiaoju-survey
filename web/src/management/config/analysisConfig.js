@@ -2,7 +2,7 @@ import { menuItems } from './questionMenuConfig'
 
 export const noDataConfig = {
   title: '暂无数据',
-  desc: '您的问卷当前还没有数据，快去回收问卷吧！',
+  desc: '您的投票当前还没有数据，快去回收吧！',
   img: '/imgs/icons/analysis-empty.webp'
 }
 

@@ -45,8 +45,8 @@ import ChannelRow from './components/ChannelRow.vue'
 
 const backgroundImage = '/imgs/phone-bg.webp'
 const defaultConfig = {
-  title: '问卷未发布',
-  desc: '点击发布后，问卷就可以对外投放了哦！',
+  title: '投票未发布',
+  desc: '点击发布后，投票就可以对外投放了哦！',
   img: '/imgs/icons/unpublished.webp'
 }
 
