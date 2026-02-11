@@ -24,12 +24,6 @@
         </div>
       </template>
     </PaginationPanel>
-    <i-ep-plus
-      v-if="!props.readonly"
-      style="font-size: 12px"
-      @click="addPageControls"
-      class="plus-add"
-    />
   </div>
 </template>
 <script setup>

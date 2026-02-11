@@ -1,8 +1,5 @@
 <template>
   <div class="main-operation" @click="onMainClick" ref="mainOperation">
-    <div class="pagination-wrapper">
-      <PageWrapper :readonly="false" />
-    </div>
     <div class="operation-wrapper" ref="operationWrapper">
       <div class="box content" ref="box">
         <MainTitle
@@ -44,7 +41,6 @@ import { storeToRefs } from 'pinia'
 
 import communalLoader from '@materials/communals/communalLoader.js'
 
-import PageWrapper from '@/management/pages/edit/components/Pagination/PaginationWrapper.vue'
 import MaterialGroup from '@/management/pages/edit/components/MaterialGroup.vue'
 import AdvancedComponent from './components/AdvancedConfig/index.vue'
 
@@ -154,13 +150,6 @@ watch(
   flex-direction: column;
   align-items: center;
   background-color: #f6f7f9;
-}
-.pagination-wrapper {
-  width: 90%;
-  padding-right: 30px;
-  margin-right: -30px;
-  position: relative;
-  top: 50px;
 }
 
 .toolbar {
