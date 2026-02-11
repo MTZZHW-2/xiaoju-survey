@@ -109,7 +109,7 @@ describe('ResponseSchemaController', () => {
 
       await expect(controller.getSchema(mockQueryInfo)).rejects.toThrow(
         new HttpException(
-          '问卷不存在或已删除',
+          '投票不存在或已删除',
           EXCEPTION_CODE.RESPONSE_SCHEMA_REMOVED,
         ),
       );
@@ -149,7 +149,7 @@ describe('ResponseSchemaController', () => {
 
       await expect(
         controller.whitelistValidate(surveyPath, { password: '123456' }),
-      ).rejects.toThrow(new SurveyNotFoundException('该问卷不存在,无法提交'));
+      ).rejects.toThrow(new SurveyNotFoundException('该投票不存在,无法提交'));
     });
 
     it('should throw HttpException when password is incorrect', async () => {

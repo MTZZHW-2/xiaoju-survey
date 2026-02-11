@@ -321,8 +321,8 @@ export class CollaboratorController {
     const surveyMeta = await this.surveyMetaService.getSurveyById({ surveyId });
 
     if (!surveyMeta) {
-      this.logger.error(`问卷不存在: ${surveyId}`);
-      throw new HttpException('问卷不存在', EXCEPTION_CODE.SURVEY_NOT_FOUND);
+      this.logger.error(`投票不存在: ${surveyId}`);
+      throw new HttpException('投票不存在', EXCEPTION_CODE.SURVEY_NOT_FOUND);
     }
 
     // 问卷owner，有问卷的权限

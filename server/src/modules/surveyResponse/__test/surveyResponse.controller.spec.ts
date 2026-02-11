@@ -286,7 +286,7 @@ describe('SurveyResponseController', () => {
         .mockResolvedValueOnce(null);
 
       await expect(controller.createResponse(reqBody)).rejects.toThrow(
-        new SurveyNotFoundException('该问卷不存在,无法提交'),
+        new SurveyNotFoundException('该投票不存在,无法提交'),
       );
     });
 
@@ -544,7 +544,7 @@ describe('SurveyResponseController', () => {
     //   jest.spyOn(openAuthGuard, 'canActivate')
     //     .mockResolvedValueOnce(true);
 
-    //   // Mock 问卷不存在
+    //   // Mock 投票不存在
     //   jest.spyOn(responseSchemaService, 'getResponseSchemaByPath')
     //     .mockResolvedValueOnce(null);
 

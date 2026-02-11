@@ -163,7 +163,7 @@ export class SurveyResponseController {
     const responseSchema =
       await this.responseSchemaService.getResponseSchemaByPath(surveyPath);
     if (!responseSchema || responseSchema.isDeleted) {
-      throw new SurveyNotFoundException('该问卷不存在,无法提交');
+      throw new SurveyNotFoundException('该投票不存在,无法提交');
     }
     if (responseSchema?.subStatus?.status === RECORD_SUB_STATUS.PAUSING) {
       throw new HttpException(

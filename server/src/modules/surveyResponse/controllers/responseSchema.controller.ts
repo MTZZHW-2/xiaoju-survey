@@ -46,7 +46,7 @@ export class ResponseSchemaController {
       );
     if (!responseSchema || responseSchema.isDeleted) {
       throw new HttpException(
-        '问卷不存在或已删除',
+        '投票不存在或已删除',
         EXCEPTION_CODE.RESPONSE_SCHEMA_REMOVED,
       );
     }
@@ -87,7 +87,7 @@ export class ResponseSchemaController {
     const schema =
       await this.responseSchemaService.getResponseSchemaByPath(surveyPath);
     if (!schema || schema.isDeleted) {
-      throw new SurveyNotFoundException('该问卷不存在,无法提交');
+      throw new SurveyNotFoundException('该投票不存在,无法提交');
     }
 
     const { password, whitelist: whitelistValue } = value;

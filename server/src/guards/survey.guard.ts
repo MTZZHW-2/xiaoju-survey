@@ -34,7 +34,7 @@ export class SurveyGuard implements CanActivate {
     const surveyMeta = await this.surveyMetaService.getSurveyById({ surveyId });
 
     if (!surveyMeta) {
-      throw new SurveyNotFoundException('问卷不存在');
+      throw new SurveyNotFoundException('投票不存在');
     }
 
     request.surveyMeta = surveyMeta;

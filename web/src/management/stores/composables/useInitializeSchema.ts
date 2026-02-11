@@ -87,7 +87,7 @@ export default function useInitializeSchema(
       initShowLogicEngine()
       initJumpLogicEngine()
     } else {
-      throw new Error(res.errmsg || '问卷不存在')
+      throw new Error(res.errmsg || '投票不存在')
     }
   }
 
